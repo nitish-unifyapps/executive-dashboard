@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', sans-serif; background: #F7F8FA; }
+    a { color: inherit; }
+  </style>
+</helmet>
+<dc-import name="Nav" active-page="alerts" hint-size="100%,56px"></dc-import>
+<div style="max-width:1440px;margin:0 auto;padding:20px 32px 40px;">
+  <div style="margin-bottom:16px;">
+    <div style="font-size:26px;font-weight:700;color:#101828;">Alerts and Risks</div>
+    <div style="font-size:14px;color:#667085;margin-top:4px;">Proactive awareness of threats and emerging issues</div>
+  </div>
+
+  <div style="display:flex;background:#fff;border:1px solid #E4E7EC;border-radius:8px;">
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">High Risk Alerts</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">12</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#DC2626;">+5 vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Medium Risk Alerts</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">24</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#D97706;">+3 vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Issues Monitored</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">68</div>
+      <div style="font-size:12.5px;color:#98A2B3;margin-top:4px;">across all regions</div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Accounts at Risk</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">237</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#DC2626;">+12% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Risks Mitigated</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">31</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+15% vs May</span></div>
+    </div>
+  </div>
+
+  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;margin-top:16px;">
+    <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI SUMMARY, RISK MITIGATION PRIORITIES</span></div>
+    <div style="font-size:14px;line-height:1.6;color:#344054;margin-top:8px;max-width:1180px;">Expedite inventory replenishment for at risk accounts. Resolve aged credit holds over 30 days. Review competitive pricing to protect share. Engage impacted accounts with proactive outreach. Increase sample delivery capacity to reduce lost opportunities.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;margin-top:20px;align-items:stretch;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+        <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:12px;">Top Risk Categories</div>
+        <sc-for list="{{riskCats}}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:10px;padding:7px 0;">
+            <div style="width:230px;font-size:12.5px;color:#344054;flex-shrink:0;">{{r.name}}</div>
+            <div style="flex:1;height:10px;background:#F2F4F7;border-radius:4px;overflow:hidden;"><div style="{{r.barStyle}}"></div></div>
+            <div style="width:100px;text-align:right;font-size:12.5px;font-weight:600;color:#101828;flex-shrink:0;">{{r.value}}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+        <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:12px;">Regional Risk Heat Map</div>
+        <div style="display:grid;grid-template-columns:150px repeat(3,1fr);gap:4px;">
+          <div></div>
+          <sc-for list="{{riskCols}}" as="c" hint-placeholder-count="3">
+            <div style="font-size:11.5px;font-weight:600;color:#667085;text-align:center;padding-bottom:4px;">{{c}}</div>
+          </sc-for>
+          <sc-for list="{{flatRisk}}" as="cell" hint-placeholder-count="20">
+            <div style="{{cell.style}}">{{cell.label}}</div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;">
+          <span style="font-size:11.5px;color:#98A2B3;">Fewer accounts</span>
+          <div style="width:160px;height:8px;border-radius:4px;background:linear-gradient(90deg,#EFF6FF,#93C5FD,#1D4ED8);"></div>
+          <span style="font-size:11.5px;color:#98A2B3;">More accounts</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;display:flex;flex-direction:column;">
+      <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:6px;">Accounts Most at Risk</div>
+      <sc-for list="{{accounts}}" as="a" hint-placeholder-count="8">
+        <div style="{{a.rowStyle}}">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:20px;height:20px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{a.n}}</div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:#101828;">{{a.name}}</div>
+              <div style="font-size:11.5px;color:#98A2B3;margin-top:1px;">{{a.region}} &middot; {{a.issue}}</div>
+            </div>
+          </div>
+          <span style="{{a.badgeStyle}}">{{a.risk}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  riskBarColor(level) { return { High: '#DC2626', Medium: '#D97706', Low: '#16A34A' }[level]; }
+  riskBadge(level) {
+    const map = { High: { bg: '#FEF3F2', fg: '#B42318' }, Medium: { bg: '#FFFAEB', fg: '#B54708' } };
+    const c = map[level];
+    return `font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;flex-shrink:0;`;
+  }
+  countCellStyle(value, max) {
+    const t = value / max;
+    const lerp = (a, b) => Math.round(a + (b - a) * t);
+    const c1 = [239, 246, 255], c2 = [29, 78, 216];
+    const r = lerp(c1[0], c2[0]), g = lerp(c1[1], c2[1]), b = lerp(c1[2], c2[2]);
+    const fg = t > 0.55 ? '#fff' : '#1D4ED8';
+    return `background:rgb(${r},${g},${b});color:${fg};font-size:12px;font-weight:600;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;`;
+  }
+  renderVals() {
+    const catsRaw = [
+      ['Inventory and Sample Delays', 124, 'High'],
+      ['Credit Holds and Payment Delays', 98, 'High'],
+      ['Aggressive Competitor Pricing', 86, 'High'],
+      ['Business Slowdowns and Staff Reductions', 72, 'Medium'],
+      ['Supply Chain Constraints', 61, 'Medium'],
+    ];
+    const catMax = Math.max(...catsRaw.map(c => c[1]));
+    const riskCats = catsRaw.map(([name, value, level]) => ({
+      name, value: value + ' accounts',
+      barStyle: `width:${(value / catMax * 100).toFixed(0)}%;height:100%;background:${this.riskBarColor(level)};border-radius:4px;`,
+    }));
+    const accountsRaw = [
+      ['Flooring Solutions Inc.', 'Southeast', 'High', 'Inventory delays'],
+      ['Premier Floors', 'Midwest', 'High', 'Credit holds'],
+      ['Builders Choice', 'West', 'High', 'Competitor pricing'],
+      ['Design Center Pro', 'Northeast', 'Medium', 'Staff reductions'],
+      ['HomeStyle Interiors', 'Southeast', 'Medium', 'Payment delays'],
+      ['Southern Floor Supply', 'West', 'Medium', 'Inventory delays'],
+      ['Carpet World Distributors', 'Midwest', 'Medium', 'Credit holds'],
+      ['Coastal Flooring Group', 'Southeast', 'Medium', 'Competitor pricing'],
+    ];
+    const accounts = accountsRaw.map(([name, region, risk, issue], i) => ({
+      n: i + 1, name, region, risk, issue,
+      badgeStyle: this.riskBadge(risk),
+      rowStyle: `display:flex;justify-content:space-between;align-items:center;padding:9px 0;${i === accountsRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
+    }));
+    const heatRaw = [
+      ['Southeast', [5, 9, 18]],
+      ['Midwest', [3, 8, 17]],
+      ['West', [2, 6, 15]],
+      ['Northeast', [2, 5, 14]],
+      ['Southwest', [0, 2, 10]],
+    ];
+    const max = Math.max(...heatRaw.flatMap(r => r[1]));
+    const flatRisk = [];
+    heatRaw.forEach(([name, vals]) => {
+      flatRisk.push({ label: name, style: 'font-size:12.5px;color:#344054;display:flex;align-items:center;' });
+      vals.forEach(v => flatRisk.push({ label: v, style: this.countCellStyle(v, max) }));
+    });
+    return { riskCats, accounts, riskCols: ['High', 'Medium', 'Low'], flatRisk };
+  }
+}
+</script>
+</body>
+</html>

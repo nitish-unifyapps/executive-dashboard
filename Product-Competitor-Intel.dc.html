@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', sans-serif; background: #F7F8FA; }
+    a { color: inherit; }
+    .spot-scroll::-webkit-scrollbar { height: 0; }
+  </style>
+</helmet>
+<dc-import name="Nav" active-page="product" hint-size="100%,56px"></dc-import>
+<div style="max-width:1440px;margin:0 auto;padding:20px 32px 40px;">
+  <div style="margin-bottom:16px;">
+    <div style="font-size:26px;font-weight:700;color:#101828;">Product and Competitor Intel</div>
+    <div style="font-size:14px;color:#667085;margin-top:4px;">Product performance, competitor activity, and market intelligence</div>
+  </div>
+
+  <div style="display:flex;background:#fff;border:1px solid #E4E7EC;border-radius:8px;">
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Total Product Mentions</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">32,781</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+15% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Positive Product Sentiment</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">64%</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+6% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">Competitors Mentioned</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">24</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+9% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">High Threat Competitors</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">6</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><span style="font-size:12.5px;font-weight:500;color:#98A2B3;">requiring attention</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="font-size:13px;color:#475467;font-weight:500;">New Product Mentions</div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">128</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+18% vs May</span></div>
+    </div>
+  </div>
+
+  <div style="font-size:17px;font-weight:700;color:#101828;margin-top:24px;margin-bottom:12px;">Products</div>
+
+  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;">
+    <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI SUMMARY, PRODUCT TRENDS AND OPPORTUNITIES</span></div>
+    <div style="font-size:14px;line-height:1.6;color:#344054;margin-top:8px;max-width:1180px;">Pet solutions and waterproof performance features continue to drive engagement, with large format tile and sustainability messaging gaining traction. The clearest opportunities are scaling Pet Perfect displays and promotions, pushing LVP momentum into broader availability, and countering pricing pressure with targeted value messaging and faster new product education.</div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;margin-top:16px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:12px;">Product Sentiment</div>
+    <sc-for list="{{productSentiment}}" as="p" hint-placeholder-count="6">
+      <div style="display:flex;align-items:center;gap:10px;padding:6px 0;">
+        <div style="width:200px;font-size:12.5px;color:#344054;flex-shrink:0;">{{p.name}}</div>
+        <div style="flex:1;height:10px;background:#F2F4F7;border-radius:4px;overflow:hidden;"><div style="{{p.barStyle}}"></div></div>
+        <div style="width:60px;text-align:right;font-size:12.5px;font-weight:600;color:#101828;flex-shrink:0;">{{p.value}}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Product Spotlight</div>
+    <div style="position:relative;">
+      <button onClick="{{scrollLeft}}" style="position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:999px;background:#fff;border:1px solid #E4E7EC;box-shadow:0 4px 10px rgba(16,24,40,0.1);cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#344054" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="spot-scroll" ref="{{scrollRef}}" style="display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;padding:2px 4px 8px;">
+        <sc-for list="{{products}}" as="prod" hint-placeholder-count="12">
+          <div style="width:230px;flex-shrink:0;background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:7px;">
+            <image-slot id="{{prod.imgId}}" src="{{prod.imgSrc}}" shape="rounded" radius="6" style="width:100%;height:110px;" placeholder="Product photo"></image-slot>
+            <div style="font-size:12.5px;font-weight:600;color:#101828;line-height:1.3;">{{prod.name}}</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <span style="{{prod.tagStyle}}">{{prod.sentiment}}</span>
+              <span style="font-size:11px;color:#667085;white-space:nowrap;">{{prod.mentions}}</span>
+            </div>
+            <div style="font-size:11.5px;color:#667085;line-height:1.45;">{{prod.desc}}</div>
+          </div>
+        </sc-for>
+      </div>
+      <button onClick="{{scrollRight}}" style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:999px;background:#fff;border:1px solid #E4E7EC;box-shadow:0 4px 10px rgba(16,24,40,0.1);cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#344054" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+
+  <div style="font-size:17px;font-weight:700;color:#101828;margin-top:28px;margin-bottom:12px;">Competitors</div>
+
+  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;">
+    <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI SUMMARY, COMPETITIVE TAKEAWAYS</span></div>
+    <div style="font-size:14px;line-height:1.6;color:#344054;margin-top:8px;max-width:1180px;">Mohawk and Mannington remain the most aggressive on pricing and promotions. Pricing and promotions are the top reason competitors are winning share. Pet solutions remain a key battleground for share. New product introductions from competitors are increasing market noise.</div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;margin-top:16px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:6px;">Competitor Intelligence Overview</div>
+    <sc-for list="{{competitors}}" as="c" hint-placeholder-count="5">
+      <div style="{{c.rowStyle}}" onClick="{{c.select}}">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:20px;height:20px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">{{c.n}}</div>
+            <span style="font-size:13.5px;font-weight:600;color:#101828;">{{c.name}}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:12.5px;font-weight:600;color:#101828;">{{c.value}}</span>
+            <span style="{{c.badgeStyle}}">{{c.threat}}</span>
+          </div>
+        </div>
+        <div style="height:8px;background:#F2F4F7;border-radius:4px;margin-top:7px;"><div style="{{c.barStyle}}"></div></div>
+        <div style="font-size:12px;color:#667085;margin-top:6px;">{{c.desc}}</div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<sc-if value="{{drawerOpen}}" hint-placeholder-val="{{false}}">
+  <div onClick="{{closeDrawer}}" style="position:fixed;inset:0;background:rgba(16,24,40,0.35);z-index:300;"></div>
+  <div style="position:fixed;top:0;right:0;height:100vh;width:440px;background:#fff;border-left:1px solid #E4E7EC;box-shadow:-8px 0 24px rgba(16,24,40,0.12);z-index:301;overflow-y:auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #EEF1F4;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:#EFF6FF;color:#1D4ED8;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;">{{selected.initial}}</div>
+        <span style="font-size:17px;font-weight:700;color:#101828;">{{selected.name}}</span>
+      </div>
+      <button onClick="{{closeDrawer}}" style="background:none;border:none;cursor:pointer;color:#667085;font-size:18px;padding:0;line-height:1;">×</button>
+    </div>
+    <div style="padding:20px;">
+      <div style="font-size:12px;color:#667085;line-height:1.6;margin-bottom:16px;">{{selected.desc}}</div>
+
+      <div style="display:flex;gap:28px;margin-bottom:16px;">
+        <div>
+          <div style="font-size:11.5px;color:#98A2B3;">Total Mentions</div>
+          <div style="font-size:20px;font-weight:700;color:#101828;margin-top:2px;">{{selected.value}}</div>
+        </div>
+        <div>
+          <div style="font-size:11.5px;color:#98A2B3;">Threat Level</div>
+          <span style="{{selected.badgeStyle}} display:inline-block;margin-top:5px;">{{selected.threat}}</span>
+        </div>
+      </div>
+
+      <div style="background:#EFF6FF;border-radius:8px;padding:14px 16px;margin-bottom:18px;">
+        <div style="display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11px;font-weight:700;color:#1D4ED8;letter-spacing:0.5px;">ACTIONABLE INSIGHTS</span></div>
+        <div style="font-size:13px;color:#344054;line-height:1.6;margin-top:8px;">{{selected.insight}}</div>
+      </div>
+
+      <sc-if value="{{selected.hasDetail}}" hint-placeholder-val="{{false}}">
+        <div style="border:1px solid #E4E7EC;border-radius:8px;padding:14px 16px;margin-bottom:18px;">
+          <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:10px;">Mention Categories</div>
+          <sc-for list="{{selected.categories}}" as="cat" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+              <div style="width:90px;font-size:11.5px;color:#344054;flex-shrink:0;">{{cat.name}}</div>
+              <div style="flex:1;height:8px;background:#F2F4F7;border-radius:4px;overflow:hidden;"><div style="{{cat.barStyle}}"></div></div>
+              <div style="width:20px;text-align:right;font-size:11.5px;font-weight:600;color:#101828;flex-shrink:0;">{{cat.value}}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-bottom:18px;">
+          <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:8px;">Top Accounts Mentioning {{selected.name}}</div>
+          <div style="border:1px solid #E4E7EC;border-radius:8px;overflow:hidden;">
+            <sc-for list="{{selected.topAccounts}}" as="acc" hint-placeholder-count="3">
+              <div style="{{acc.rowStyle}}">
+                <div>
+                  <div style="font-size:12.5px;font-weight:600;color:#101828;">{{acc.name}}</div>
+                  <div style="font-size:11px;color:#98A2B3;margin-top:1px;">{{acc.region}}</div>
+                </div>
+                <span style="font-size:12.5px;font-weight:600;color:#101828;">{{acc.mentions}} mentions</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:8px;">Customer Quotes</div>
+          <sc-for list="{{selected.quotes}}" as="q" hint-placeholder-count="2">
+            <div style="border:1px solid #E4E7EC;border-radius:8px;padding:10px 12px;margin-bottom:8px;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:5px;background:#00A1E0;flex-shrink:0;">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M12 4a5 5 0 0 1 4.9 4.02A4 4 0 0 1 21 12a4 4 0 0 1-4 4H7a4.5 4.5 0 0 1-.9-8.9A5 5 0 0 1 12 4z"/></svg>
+                </span>
+                <span style="font-size:11.5px;font-weight:600;color:#344054;">{{q.account}}</span>
+              </div>
+              <div style="font-size:12.5px;color:#475467;line-height:1.5;">{{q.text}}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { selectedIdx: null };
+  componentDidMount() { this.scrollEl = null; }
+  sentColor(s) { return { Positive: '#16A34A', Neutral: '#D97706', Negative: '#DC2626' }[s] || '#D97706'; }
+  sentTag(s) {
+    const map = { Positive: { bg: '#ECFDF3', fg: '#067647' }, Neutral: { bg: '#FFFAEB', fg: '#B54708' }, Negative: { bg: '#FEF3F2', fg: '#B42318' } };
+    const c = map[s] || map.Neutral;
+    return `font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;`;
+  }
+  threatBadge(t) {
+    const map = { High: { bg: '#FEF3F2', fg: '#B42318' }, Medium: { bg: '#FFFAEB', fg: '#B54708' }, Benchmark: { bg: '#F2F4F7', fg: '#475467' } };
+    const c = map[t];
+    return `font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;`;
+  }
+  renderVals() {
+    const pSentRaw = [
+      ['Carpet', 12842, 'Positive'], ['Luxury Vinyl (LVP/LVT)', 8921, 'Positive'], ['Engineered Hardwood', 4736, 'Positive'],
+      ['Pet Perfect', 3765, 'Positive'], ['Tile and Stone', 2387, 'Positive'], ['Laminate', 2145, 'Neutral'],
+    ];
+    const pMax = Math.max(...pSentRaw.map(p => p[1]));
+    const productSentiment = pSentRaw.map(([name, value, sentiment]) => ({
+      name, value: value.toLocaleString(),
+      barStyle: `width:${(value / pMax * 100).toFixed(0)}%;height:100%;background:${this.sentColor(sentiment)};border-radius:4px;`,
+    }));
+    const productsRaw = [
+      ['Pet Perfect®', 'High Positive', 3765, 'Shaw\'s flagship pet-friendly flooring collection with stain resistance, waterproof options, and scratch protection. Designed specifically for homes with pets.', './productImages/floors%20pet%20perfect.jpeg'],
+      ['Pet Perfect+®', 'Positive', 1540, 'Premium Pet Perfect carpet featuring LifeGuard® Spill-Proof Backing that prevents spills from reaching the subfloor.', './productImages/pet%20perfect%20plus%20velvet.jpeg'],
+      ['Floorté® Classic', 'High Positive', 2987, 'Residential waterproof luxury vinyl flooring offering realistic wood visuals, comfort, and easy maintenance.', './productImages/floorte.jpeg'],
+      ['Floorté® Pro', 'Positive', 1750, 'Commercial-grade luxury vinyl plank with enhanced dent and impact resistance while remaining 100% waterproof.', './productImages/floorte%20pro%20infinite.jpeg'],
+      ['Engineered Hardwood', 'Positive', 2145, 'Premium engineered hardwood available in multiple wood species with improved dimensional stability over solid hardwood.', './productImages/florte%20pro.jpeg'],
+      ['Tile & Stone Collection', 'Positive', 1876, 'Ceramic and porcelain flooring suitable for kitchens, bathrooms, and commercial installations, including large-format tiles.', './productImages/lvp.jpeg'],
+      ['Commercial Carpet Tile', 'Neutral', 640, 'Modular carpet tile solutions for offices, healthcare, hospitality, and education environments.', './productImages/luxury%20vinyl.jpeg'],
+    ];
+    const products = productsRaw.map(([name, sentiment, mentions, desc, imgSrc], i) => ({
+      name, sentiment, desc, imgSrc, mentions: mentions.toLocaleString() + ' mentions',
+      imgId: 'product-' + i,
+      tagStyle: this.sentTag(sentiment.replace('High ', '')),
+    }));
+    const compRaw = [
+      ['Mohawk', 1245, 'High', 'Aggressive pricing, promotions, inventory depth.',
+        'Emphasize Shaw\'s price competitiveness and product differentiators like R2X and Colorguard. Sharpen pricing on comparable SKUs and equip teams with updated collateral to support conversions.',
+        [['Awareness', 24], ['Pricing', 62], ['Promotions', 28], ['Inventory', 14], ['Service', 9]],
+        [['Amparan Flooring', 'Southeast', 18], ['Flooring Liquidators', 'Midwest', 14], ['Sac Floor Store Inc.', 'West', 11]],
+        [['Amparan Flooring', 'Compared pricing on Ramped Up favorably against Mohawk, but noted Mohawk\'s inventory depth.'], ['Flooring Liquidators', 'Dealer flagged Mohawk\'s aggressive promotional pricing pulling some price sensitive accounts.']]],
+      ['Mannington', 892, 'High', 'Discounting on LVP/LVT, gaining share in value segment.',
+        'Highlight Shaw\'s value beyond price on LVP and LVT. Equip teams with objection handling for discount-driven competition and monitor share shifts in the value segment.',
+        [['Awareness', 16], ['Pricing', 41], ['Promotions', 19], ['Inventory', 8], ['Service', 6]],
+        [['Premier Floors', 'Midwest', 12], ['Design Center Pro', 'Northeast', 9], ['Coastal Flooring Group', 'Southeast', 7]],
+        [['Premier Floors', 'Cited Mannington\'s LVP discounting as a reason for delaying reorder.'], ['Design Center Pro', 'Flagged Mannington\'s promotional bundle pricing in the value segment.']]],
+      ['DreamWeaver', 567, 'Medium', 'Strong on pet solutions, increased marketing.',
+        'Reinforce Pet Perfect\'s display and marketing advantage. Track DreamWeaver\'s pet solutions messaging and counter with expanded in-store support.',
+        [['Awareness', 20], ['Pricing', 9], ['Promotions', 15], ['Inventory', 4], ['Service', 5]],
+        [['Builders Choice', 'West', 8], ['HomeStyle Interiors', 'Southeast', 6]],
+        [['Builders Choice', 'Noted DreamWeaver\'s expanded pet solution marketing push.'], ['HomeStyle Interiors', 'Mentioned increased DreamWeaver in-store presence this quarter.']]],
+      ['Tarkett', 438, 'Medium', 'Competitive on commercial, new introductions.',
+        'Strengthen commercial account relationships ahead of new product launches. Lead with Shaw\'s commercial tile line value and service reliability.',
+        [['Awareness', 11], ['Pricing', 7], ['Promotions', 6], ['Inventory', 3], ['Service', 4]],
+        [['Design Center Pro', 'Northeast', 5], ['Southern Floor Supply', 'West', 4]],
+        [['Design Center Pro', 'Referenced Tarkett\'s new product introduction as a competitive factor.'], ['Southern Floor Supply', 'Compared Tarkett pricing on the commercial tile line.']]],
+      ['Shaw Floors', null, 'Benchmark', 'Monitor own performance vs market.', 'Use as the internal baseline when reading competitor mention volume and sentiment.', [], [], []],
+    ];
+    const compMax = Math.max(...compRaw.filter(c => c[1]).map(c => c[1]));
+    const barColor = { High: '#DC2626', Medium: '#D97706', Benchmark: '#98A2B3' };
+    const competitors = compRaw.map(([name, mentions, threat, desc, insight, categories, topAccounts, quotes], i) => {
+      const catMax = Math.max(1, ...categories.map(c => c[1]));
+      return {
+        n: i + 1, name, desc, threat, insight,
+        initial: name[0],
+        hasDetail: categories.length > 0,
+        value: mentions ? mentions.toLocaleString() : 'Internal',
+        badgeStyle: this.threatBadge(threat),
+        barStyle: `width:${mentions ? (mentions / compMax * 100).toFixed(0) : 15}%;height:100%;background:${barColor[threat]};border-radius:4px;`,
+        rowStyle: `padding:10px 0;cursor:pointer;${i === compRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
+        categories: categories.map(([cname, cval]) => ({ name: cname, value: cval, barStyle: `width:${(cval / catMax * 100).toFixed(0)}%;height:100%;background:#2563EB;border-radius:4px;` })),
+        topAccounts: topAccounts.map(([aname, region, mentions], j) => ({ name: aname, region, mentions, rowStyle: `display:flex;justify-content:space-between;align-items:center;padding:9px 12px;${j === topAccounts.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}` })),
+        quotes: quotes.map(([account, text]) => ({ account, text })),
+        select: () => this.setState({ selectedIdx: i }),
+      };
+    });
+    const selected = this.state.selectedIdx !== null ? competitors[this.state.selectedIdx] : {};
+    return {
+      productSentiment, products, competitors,
+      drawerOpen: this.state.selectedIdx !== null,
+      selected,
+      closeDrawer: () => this.setState({ selectedIdx: null }),
+      scrollRef: (el) => { this.scrollEl = el; },
+      scrollLeft: () => { if (this.scrollEl) this.scrollEl.scrollBy({ left: -360, behavior: 'smooth' }); },
+      scrollRight: () => { if (this.scrollEl) this.scrollEl.scrollBy({ left: 360, behavior: 'smooth' }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

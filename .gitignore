@@ -1,0 +1,12 @@
+# Local and generated files
+.DS_Store
+.thumbnail
+.claude/
+.venv/
+.vscode/
+.vercel/
+_ds/
+uploads/
+
+# Image-slot editing state
+.image-slots.state.json

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', sans-serif; background: #F7F8FA; }
+    a { color: inherit; }
+  </style>
+</helmet>
+<dc-import name="Nav" active-page="market" hint-size="100%,56px"></dc-import>
+<div style="max-width:1440px;margin:0 auto;padding:20px 32px 40px;">
+  <div style="margin-bottom:16px;">
+    <div style="font-size:26px;font-weight:700;color:#101828;">Market Insights</div>
+    <div style="font-size:14px;color:#667085;margin-top:4px;">Deep insights into market themes and sentiment</div>
+  </div>
+
+  <div style="display:flex;background:#fff;border:1px solid #E4E7EC;border-radius:8px;">
+    <div style="flex:1;padding:14px 18px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><span style="font-size:13px;color:#475467;font-weight:500;">Total Mentions, All Themes</span></div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">45,892</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+14% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div><span style="font-size:13px;color:#475467;font-weight:500;">Positive Sentiment</span></div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">62%</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span style="font-size:12.5px;font-weight:500;color:#16A34A;">+5% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B54708" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div><span style="font-size:13px;color:#475467;font-weight:500;">Neutral Sentiment</span></div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">28%</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg><span style="font-size:12.5px;font-weight:500;color:#DC2626;">-3% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7L2.34 12.7a2 2 0 0 0 2 2.3z"/><path d="M17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"/></svg></div><span style="font-size:13px;color:#475467;font-weight:500;">Negative Sentiment</span></div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">10%</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg><span style="font-size:12.5px;font-weight:500;color:#DC2626;">-2% vs May</span></div>
+    </div>
+    <div style="width:1px;background:#E4E7EC;"></div>
+    <div style="flex:1;padding:14px 18px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.24H4a2 2 0 0 0-2 2v5.59a2 2 0 0 0 .59 1.41l9.58 9.59a2 2 0 0 0 2.82 0l6-6a2 2 0 0 0 0-2.83z"/><circle cx="7" cy="8" r="1.5"/></svg></div><span style="font-size:13px;color:#475467;font-weight:500;">Themes Identified</span></div>
+      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">105</div>
+      <div style="display:flex;align-items:center;gap:4px;margin-top:4px;"><span style="font-size:12.5px;font-weight:500;color:#98A2B3;">across all regions</span></div>
+    </div>
+  </div>
+
+  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;margin-top:16px;">
+    <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI SUMMARY, MARKET TAKEAWAYS</span></div>
+    <div style="font-size:14px;line-height:1.6;color:#344054;margin-top:8px;max-width:1180px;">Demand for core products remains strong across all regions. Operational challenges, inventory, staffing, and credit, are limiting growth. Pricing pressure from competition is widespread and increasing. New products and displays are creating excitement and pull through.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-top:20px;">
+    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <span style="font-size:15px;font-weight:600;color:#101828;">Theme Breakdown</span>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:999px;background:#16A34A;display:inline-block;"></span><span style="font-size:11.5px;color:#667085;">Positive</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:999px;background:#DC2626;display:inline-block;"></span><span style="font-size:11.5px;color:#667085;">Negative</span></div>
+        </div>
+      </div>
+      <sc-for list="{{themes}}" as="t" hint-placeholder-count="7">
+        <div style="display:flex;align-items:center;gap:10px;padding:6px 0;">
+          <div style="width:170px;font-size:12.5px;color:#344054;flex-shrink:0;">{{t.name}}</div>
+          <div style="flex:1;height:10px;background:#F2F4F7;border-radius:4px;overflow:hidden;">
+            <div style="{{t.barStyle}}"></div>
+          </div>
+          <div style="width:60px;text-align:right;font-size:12.5px;font-weight:600;color:#101828;flex-shrink:0;">{{t.value}}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+      <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:12px;">What We're Hearing</div>
+      <sc-for list="{{hearing}}" as="h" hint-placeholder-count="4">
+        <div style="{{h.rowStyle}}">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:26px;height:26px;border-radius:999px;background:#F2F4F7;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#475467;font-size:13px;">{{h.icon}}</div>
+            <span style="font-size:13.5px;color:#344054;">{{h.label}}</span>
+          </div>
+          <span style="font-size:15px;font-weight:700;color:#101828;">{{h.value}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Top Themes by Market Segment</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+      <sc-for list="{{segments}}" as="s" hint-placeholder-count="5">
+        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:12px;">
+          <div style="font-size:13px;font-weight:600;color:#101828;">{{s.name}}</div>
+          <div style="font-size:12px;color:#667085;margin-top:6px;">{{s.theme}}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+            <span style="{{s.tagStyle}}">{{s.sentiment}}</span>
+            <span style="font-size:12.5px;font-weight:600;color:#101828;">{{s.count}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Insights by Region</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <sc-for list="{{regionsInsight}}" as="r" hint-placeholder-count="4">
+        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;font-weight:600;color:#101828;">{{r.name}}</span>
+            <span style="{{r.tagStyle}}">{{r.sentiment}}</span>
+          </div>
+          <div style="font-size:12.5px;color:#667085;margin-top:8px;">Top theme: <span style="color:#344054;font-weight:500;">{{r.theme}}</span></div>
+          <div style="font-size:12.5px;color:#667085;margin-top:3px;">Key issue: <span style="color:#344054;font-weight:500;">{{r.issue}}</span></div>
+          <button onClick="{{r.select}}" style="background:none;border:none;padding:0;font-size:12.5px;font-weight:500;color:#2563EB;margin-top:8px;display:inline-block;cursor:pointer;">View region</button>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:12px;">Regional Theme Heat Map</div>
+    <div style="display:grid;grid-template-columns:170px repeat(4,1fr);gap:4px;">
+      <div></div>
+      <sc-for list="{{regionCols}}" as="c" hint-placeholder-count="4">
+        <div style="font-size:11.5px;font-weight:600;color:#667085;text-align:center;padding-bottom:4px;">{{c}}</div>
+      </sc-for>
+      <sc-for list="{{flatHeat}}" as="cell" hint-placeholder-count="25">
+        <div style="{{cell.style}}">{{cell.label}}</div>
+      </sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:14px;">
+      <span style="font-size:11.5px;color:#98A2B3;">Low</span>
+      <div style="width:160px;height:8px;border-radius:4px;background:linear-gradient(90deg,#EFF6FF,#93C5FD,#1D4ED8);"></div>
+      <span style="font-size:11.5px;color:#98A2B3;">High</span>
+    </div>
+  </div>
+</div>
+
+<sc-if value="{{drawerOpen}}" hint-placeholder-val="{{false}}">
+  <div onClick="{{closeDrawer}}" style="position:fixed;inset:0;background:rgba(16,24,40,0.35);z-index:300;"></div>
+  <div style="position:fixed;top:0;right:0;height:100vh;width:460px;background:#fff;border-left:1px solid #E4E7EC;box-shadow:-8px 0 24px rgba(16,24,40,0.12);z-index:301;overflow-y:auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #EEF1F4;">
+      <span style="font-size:17px;font-weight:700;color:#101828;">{{selected.name}}</span>
+      <button onClick="{{closeDrawer}}" style="background:none;border:none;cursor:pointer;color:#667085;font-size:18px;padding:0;line-height:1;">×</button>
+    </div>
+    <div style="padding:20px;">
+      <div style="background:#EFF6FF;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+        <div style="display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11px;font-weight:700;color:#1D4ED8;letter-spacing:0.5px;">AI SUMMARY, MARKET TAKEAWAYS</span></div>
+        <div style="font-size:13px;color:#344054;line-height:1.6;margin-top:8px;">{{selected.summary}}</div>
+      </div>
+
+      <div style="font-size:14px;font-weight:700;color:#101828;margin-bottom:10px;">Theme Breakdown</div>
+      <div style="border:1px solid #E4E7EC;border-radius:8px;overflow:hidden;margin-bottom:20px;">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:8px 14px;background:#F9FAFB;border-bottom:1px solid #E4E7EC;">
+          <span style="font-size:11px;font-weight:600;color:#667085;">Theme</span>
+          <span style="font-size:11px;font-weight:600;color:#667085;">Sentiment</span>
+          <span style="font-size:11px;font-weight:600;color:#667085;text-align:right;">Mentions</span>
+        </div>
+        <sc-for list="{{selected.themes}}" as="t" hint-placeholder-count="5">
+          <div style="{{t.rowStyle}}">
+            <span style="font-size:12.5px;color:#344054;">{{t.name}}</span>
+            <span style="{{t.tagStyle}}">{{t.sentiment}}</span>
+            <span style="font-size:12.5px;font-weight:600;color:#101828;text-align:right;">{{t.mentions}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="font-size:14px;font-weight:700;color:#101828;margin-bottom:4px;">Referred Notes</div>
+      <div style="font-size:12.5px;color:#98A2B3;margin-bottom:12px;">{{selected.name}} Region</div>
+      <sc-for list="{{selected.notes}}" as="note" hint-placeholder-count="2">
+        <div style="border:1px solid #E4E7EC;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#00A1E0;flex-shrink:0;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M12 4a5 5 0 0 1 4.9 4.02A4 4 0 0 1 21 12a4 4 0 0 1-4 4H7a4.5 4.5 0 0 1-.9-8.9A5 5 0 0 1 12 4z"/></svg>
+              </span>
+              <span style="font-size:12px;color:#667085;">{{note.account}} - {{note.id}}</span>
+            </div>
+            <span style="font-size:11px;color:#98A2B3;flex-shrink:0;">{{note.date}}</span>
+          </div>
+          <div style="font-size:12.5px;color:#344054;line-height:1.5;">{{note.text}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  sentimentTag(s) {
+    const map = { Positive: { bg: '#ECFDF3', fg: '#067647' }, Negative: { bg: '#FEF3F2', fg: '#B42318' }, Neutral: { bg: '#FFFAEB', fg: '#B54708' } };
+    const c = map[s] || map.Neutral;
+    return `font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;`;
+  }
+  heatStyle(level) {
+    const map = {
+      Low: { bg: '#EFF6FF', fg: '#1D4ED8' },
+      Medium: { bg: '#93C5FD', fg: '#1E3A8A' },
+      High: { bg: '#1D4ED8', fg: '#fff' },
+    };
+    const c = map[level];
+    return `background:${c.bg};color:${c.fg};font-size:11.5px;font-weight:600;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;`;
+  }
+  state = { selectedRegion: null };
+  renderVals() {
+    const themesRaw = [
+      ['LVP/LVT Demand', 12842, 'Positive'],
+      ['Pet Perfect', 8736, 'Positive'],
+      ['Competitor Pricing', 7892, 'Negative'],
+      ['Inventory/Sample Delays', 6231, 'Negative'],
+      ['Staff Reductions', 4891, 'Negative'],
+      ['Credit Holds', 3460, 'Negative'],
+      ['New Product Launches', 2900, 'Positive'],
+    ];
+    const max = Math.max(...themesRaw.map(t => t[1]));
+    const sentColor = { Positive: '#16A34A', Negative: '#DC2626', Neutral: '#D97706' };
+    const themes = themesRaw.map(([name, value, sentiment]) => ({
+      name, value: value.toLocaleString(),
+      barStyle: `width:${(value / max * 100).toFixed(0)}%;height:100%;background:${sentColor[sentiment]};border-radius:4px;`,
+    }));
+    const hearingRaw = [['Customer Requests', 1245, '?'], ['Objections', 892, '!'], ['Complaints', 567, '×'], ['Compliments', 1876, '♥']];
+    const hearing = hearingRaw.map(([label, value, icon], i) => ({
+      label, value: value.toLocaleString(), icon,
+      rowStyle: `display:flex;align-items:center;justify-content:space-between;padding:9px 0;${i === hearingRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
+    }));
+    const segmentsRaw = [
+      ['Residential Retail', 'LVP/LVT Demand', 'Positive', 18642],
+      ['Commercial', 'Competitor Pricing', 'Negative', 9231],
+      ['Builder/Multifamily', 'New Product Launches', 'Positive', 4892],
+      ['Hard Surface', 'Inventory Delays', 'Negative', 3876],
+      ['Luxury Segment', 'Pet Perfect', 'Positive', 2451],
+    ];
+    const segments = segmentsRaw.map(([name, theme, sentiment, count]) => ({ name, theme, sentiment, count: count.toLocaleString(), tagStyle: this.sentimentTag(sentiment) }));
+    const regionDetail = {
+      Southeast: {
+        summary: 'Pet Perfect and LVP demand remain strong, but inventory delays are the top drag on conversion. Prioritize replenishment for high-velocity accounts.',
+        themes: [['LVP/LVT Demand', 'Positive', 5210], ['Pet Perfect', 'Positive', 4120], ['Inventory Delays', 'Negative', 2340], ['Competitor Pricing', 'Negative', 1580], ['Staff Reductions', 'Neutral', 890]],
+        notes: [['Flooring Solutions Inc.', '0114892', '12 Jun 2026', 'Account requested additional Pet Perfect displays for their showroom floor.'], ['Coastal Flooring Group', '0139204', '18 Jun 2026', 'Customer said Pet Perfect samples are moving faster than any other SKU this month.']],
+      },
+      Midwest: {
+        summary: 'LVP/LVT demand is solid, though competitor pricing pressure and staff reductions are creating headwinds. Reinforce value messaging where price objections are rising.',
+        themes: [['LVP/LVT Demand', 'Positive', 4780], ['Competitor Pricing', 'Negative', 3210], ['Staff Reductions', 'Negative', 2150], ['Pet Perfect', 'Positive', 1690], ['Inventory Delays', 'Negative', 1240]],
+        notes: [['Premier Floors', '0142207', '9 Jun 2026', 'Dealer said backorders on core LVP styles have pushed two orders past 3 weeks.'], ['Carpet World Distributors', '0118830', '15 Jun 2026', 'Account flagged repeated short-shipments on rigid core product.']],
+      },
+      West: {
+        summary: 'Competitor pricing is the dominant theme, compounded by inventory delays limiting fulfillment. Credit holds are also weighing on account relationships in this region.',
+        themes: [['Competitor Pricing', 'Negative', 3890], ['Inventory Delays', 'Negative', 2760], ['Pet Perfect', 'Positive', 1980], ['LVP/LVT Demand', 'Positive', 1450], ['Staff Reductions', 'Neutral', 980]],
+        notes: [['Builders Choice', '0125517', '11 Jun 2026', 'Contact said sample requests are taking over a week to arrive, slowing quotes.'], ['Sac Floor Store Inc.', '0121438', '21 Jun 2026', 'Dealer mentioned delayed samples cost them a large multifamily bid.']],
+      },
+      Northeast: {
+        summary: 'New product launches and LVP demand are driving positive sentiment, while staff reductions at accounts are the primary operational risk to monitor.',
+        themes: [['New Product Launches', 'Positive', 2340], ['LVP/LVT Demand', 'Positive', 3980], ['Staff Reductions', 'Negative', 2870], ['Competitor Pricing', 'Negative', 1120], ['Inventory Delays', 'Neutral', 760]],
+        notes: [['Design Center Pro', '0148821', '14 Jun 2026', 'Account said competitor reps are undercutting price on comparable carpet lines.'], ['HomeStyle Interiors', '0157732', '20 Jun 2026', 'Customer raised price objections tied to a competitor promotion.']],
+      },
+    };
+    const regionsRaw = [
+      ['Southeast', 'Positive', 'Pet Perfect', 'Inventory Delays'],
+      ['Midwest', 'Positive', 'LVP/LVT Demand', 'Competitor Pricing'],
+      ['West', 'Negative', 'Competitor Pricing', 'Credit Holds'],
+      ['Northeast', 'Positive', 'New Product Launches', 'Staff Reductions'],
+    ];
+    const regionsInsight = regionsRaw.map(([name, sentiment, theme, issue]) => ({
+      name, sentiment, theme, issue, tagStyle: this.sentimentTag(sentiment),
+      select: () => this.setState({ selectedRegion: name }),
+    }));
+    let selected = {};
+    if (this.state.selectedRegion) {
+      const d = regionDetail[this.state.selectedRegion];
+      selected = {
+        name: this.state.selectedRegion,
+        summary: d.summary,
+        themes: d.themes.map(([tname, sentiment, mentions]) => ({
+          name: tname, sentiment, mentions: mentions.toLocaleString(),
+          tagStyle: this.sentimentTag(sentiment),
+          rowStyle: 'display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center;padding:9px 14px;border-bottom:1px solid #F0F2F5;',
+        })),
+        notes: d.notes.map(([account, id, date, text]) => ({ account, id, date, text })),
+      };
+    }
+    const heatRaw = [
+      ['LVP/LVT Demand', ['High', 'High', 'Medium', 'High']],
+      ['Pet Perfect', ['High', 'Medium', 'Medium', 'Medium']],
+      ['Competitor Pricing', ['Medium', 'High', 'High', 'Medium']],
+      ['Inventory Delays', ['High', 'Medium', 'High', 'Medium']],
+      ['Staff Reductions', ['Medium', 'High', 'Medium', 'High']],
+    ];
+    const labelStyle = 'font-size:12.5px;color:#344054;display:flex;align-items:center;';
+    const flatHeat = [];
+    heatRaw.forEach(([name, cells]) => {
+      flatHeat.push({ label: name, style: labelStyle });
+      cells.forEach(level => flatHeat.push({ label: level, style: this.heatStyle(level) }));
+    });
+    return {
+      themes, hearing, segments, regionsInsight, regionCols: ['Southeast', 'Midwest', 'West', 'Northeast'], flatHeat,
+      drawerOpen: !!this.state.selectedRegion, selected,
+      closeDrawer: () => this.setState({ selectedRegion: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>
