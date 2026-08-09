@@ -23,10 +23,7 @@
   </div>
 
   <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;">
-      <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI MARKET OUTLOOK</span></div>
-      <span style="font-size:11.5px;font-weight:700;color:#344054;background:#fff;border:1px solid #D6E4F5;border-radius:999px;padding:4px 10px;white-space:nowrap;">Reporting period: June 1–30, 2026</span>
-    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI MARKET OUTLOOK</span></div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
       <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #16A34A;border-radius:7px;padding:12px 14px;">
         <div style="font-size:11px;font-weight:700;color:#067647;letter-spacing:0.5px;text-transform:uppercase;">Top Market Opportunity</div>
@@ -62,7 +59,6 @@
           </div>
           <div style="text-align:right;flex-shrink:0;">
             <div style="font-size:12.5px;font-weight:600;color:#101828;">{{t.mentions}} mentions</div>
-            <div style="font-size:10.5px;color:#98A2B3;margin-top:2px;">June 1–30, 2026</div>
           </div>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
         </button>
@@ -73,16 +69,27 @@
       <div style="font-size:11.5px;color:#667085;margin-top:3px;margin-bottom:8px;">Select an opportunity or risk to review its supporting market evidence.</div>
       <sc-for list="{{segments}}" as="s" hint-placeholder-count="5">
         <div style="{{s.rowStyle}}">
-          <div style="font-size:13px;font-weight:600;color:#101828;margin-bottom:7px;">{{s.name}}</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <button onClick="{{s.oppSelect}}" style="width:100%;background:#ECFDF3;border:none;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
-              <div style="font-size:10.5px;font-weight:700;color:#067647;text-transform:uppercase;letter-spacing:0.4px;">Highest Opportunity</div>
-              <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.opportunity}}</div>
-            </button>
-            <button onClick="{{s.riskSelect}}" style="width:100%;background:#FEF3F2;border:none;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
-              <div style="font-size:10.5px;font-weight:700;color:#B42318;text-transform:uppercase;letter-spacing:0.4px;">Highest Risk</div>
-              <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.risk}}</div>
-            </button>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <div style="width:28px;height:28px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{s.rank}}</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:7px;">{{s.name}}</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <button onClick="{{s.oppSelect}}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;background:transparent;border:1px solid #E4E7EC;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
+                  <div>
+                    <div style="font-size:10.5px;font-weight:700;color:#067647;text-transform:uppercase;letter-spacing:0.4px;">Opportunity</div>
+                    <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.opportunity}}</div>
+                  </div>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <button onClick="{{s.riskSelect}}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;background:transparent;border:1px solid #E4E7EC;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
+                  <div>
+                    <div style="font-size:10.5px;font-weight:700;color:#B42318;text-transform:uppercase;letter-spacing:0.4px;">Risk</div>
+                    <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.risk}}</div>
+                  </div>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </sc-for>
@@ -195,36 +202,43 @@ class Component extends DCLogic {
     const trendRaw = [
       {
         name: 'LVP/LVT Demand', kind: 'Opportunity', impact: 'Very High', mentions: 12842,
+        summary: 'Strong demand for waterproof styles and broader assortments.',
         description: 'Waterproof resilient flooring demand is the strongest cross-segment growth signal, with repeated requests for broader colors, displays, and local stock.',
         notes: [['Premier Floors', '0142207', '8 Jun 2026', 'Dealer requested a broader locally stocked LVP color range to support rising homeowner demand.'], ['Metro Design Center', '0164092', '19 Jun 2026', 'Account reported LVP quote volume is up and asked for an additional waterproof display.']],
       },
       {
         name: 'Inventory/Sample Delays', kind: 'Risk', impact: 'Very High', mentions: 6231,
+        summary: 'Stock and sample delays are slowing active opportunities.',
         description: 'Stock gaps and slow sample delivery are delaying quotes, holding orders, and increasing the likelihood that accounts shift demand to competitors.',
         notes: [['Premier Floors', '0142207', '9 Jun 2026', 'Backorders on core LVP styles pushed two customer orders beyond three weeks.'], ['Builders Choice', '0125517', '11 Jun 2026', 'Sample requests are taking over a week to arrive, slowing active quotes.']],
       },
       {
         name: 'Competitor Pricing', kind: 'Risk', impact: 'High', mentions: 7892,
+        summary: 'Aggressive promotions are driving price objections.',
         description: 'Aggressive promotional pricing is raising objections in price-sensitive accounts and putting pressure on share in commercial and value segments.',
         notes: [['Design Center Pro', '0148821', '14 Jun 2026', 'Account said competitor reps are undercutting comparable carpet and LVP lines.'], ['HomeStyle Interiors', '0157732', '20 Jun 2026', 'Customer raised a price objection tied directly to a competitor promotion.']],
       },
       {
         name: 'Pet Perfect', kind: 'Opportunity', impact: 'High', mentions: 8736,
+        summary: 'Pet-focused performance continues to drive display demand.',
         description: 'Pet-friendly performance remains a strong purchase driver, with dealers requesting more displays and reporting faster sample movement.',
         notes: [['Flooring Solutions Inc.', '0114892', '12 Jun 2026', 'Account requested additional Pet Perfect displays for the showroom floor.'], ['Coastal Flooring Group', '0139204', '18 Jun 2026', 'Pet Perfect samples are moving faster than any other SKU this month.']],
       },
       {
         name: 'Staff Reductions', kind: 'Risk', impact: 'Medium', mentions: 4891,
+        summary: 'Reduced staffing is slowing follow-up and bids.',
         description: 'Reduced staffing at dealer and commercial accounts is slowing follow-up, merchandising resets, and bid turnaround.',
         notes: [['Northeast Flooring Group', '0182304', '10 Jun 2026', 'Account reduced sales coverage and postponed two planned showroom resets.'], ['Commercial Flooring Partners', '0170491', '24 Jun 2026', 'Estimator shortages are extending bid response times for active projects.']],
       },
       {
         name: 'New Product Launches', kind: 'Opportunity', impact: 'Medium', mentions: 2900,
+        summary: 'New launches are creating display expansion opportunities.',
         description: 'New rigid-core and premium visual launches are generating early interest and creating openings for display expansion.',
         notes: [['Design Center Pro', '0148821', '17 Jun 2026', 'Dealer asked for early samples and launch timing for the new rigid-core line.'], ['Amparan Flooring', '0192186', '23 Jun 2026', 'Account expressed strong interest in adding the new collection to its fall reset.']],
       },
       {
         name: 'Credit Holds', kind: 'Risk', impact: 'Medium', mentions: 3460,
+        summary: 'Credit holds are delaying healthy-account replenishment.',
         description: 'Credit constraints are delaying replenishment in otherwise healthy accounts and weakening confidence in near-term availability.',
         notes: [['Western Flooring Supply', '0176208', '13 Jun 2026', 'Account delayed a replenishment order while waiting for its credit limit review.'], ['Builders Choice', '0125517', '26 Jun 2026', 'A temporary credit hold paused an order tied to a multifamily installation.']],
       },
@@ -233,7 +247,7 @@ class Component extends DCLogic {
     trendRaw.forEach(t => { trendByName[t.name] = t; });
     const selectTrend = name => () => this.setState({ selectedType: 'trend', selectedKey: name });
     const trends = trendRaw.map((t, i) => ({
-      rank: i + 1, name: t.name, kind: t.kind, impact: t.impact, description: t.description,
+      rank: i + 1, name: t.name, kind: t.kind, impact: t.impact, description: t.summary,
       mentions: t.mentions.toLocaleString(), kindStyle: this.kindTag(t.kind),
       rowStyle: this.clickRow(i === trendRaw.length - 1), select: selectTrend(t.name),
     }));
@@ -245,10 +259,19 @@ class Component extends DCLogic {
       ['Hard Surface', 'New Product Launches', 'Inventory/Sample Delays'],
       ['Luxury Segment', 'Pet Perfect', 'Competitor Pricing'],
     ];
-    const segments = segmentsRaw.map(([name, opportunity, risk], i) => ({
-      name, opportunity, risk, oppSelect: selectTrend(opportunity), riskSelect: selectTrend(risk),
-      rowStyle: `padding:10px 0;${i === segmentsRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
-    }));
+    const segmentByKey = {};
+    const segments = segmentsRaw.map(([name, opportunity, risk], i) => {
+      const opportunityKey = `${name}:opportunity`;
+      const riskKey = `${name}:risk`;
+      segmentByKey[opportunityKey] = { segment: name, focus: 'Opportunity', theme: opportunity };
+      segmentByKey[riskKey] = { segment: name, focus: 'Risk', theme: risk };
+      return {
+        rank: i + 1, name, opportunity, risk,
+        oppSelect: () => this.setState({ selectedType: 'segment', selectedKey: opportunityKey }),
+        riskSelect: () => this.setState({ selectedType: 'segment', selectedKey: riskKey }),
+        rowStyle: `padding:11px 0;${i === segmentsRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
+      };
+    });
 
     const regionDetail = {
       Southeast: {
@@ -293,9 +316,21 @@ class Component extends DCLogic {
       selected = {
         eyebrow: 'Market Trend', title: d.name, description: d.description,
         metricOneLabel: 'Business impact', metricOneValue: d.impact,
-        metricTwoLabel: 'Mentions · Jun 1–30', metricTwoValue: d.mentions.toLocaleString(),
+        metricTwoLabel: 'Mentions', metricTwoValue: d.mentions.toLocaleString(),
         hasDetails: false, detailTitle: '', details: [],
-        noteContext: 'Accounts and sales calls supporting this trend · June 1–30, 2026',
+        noteContext: 'Accounts and sales calls supporting this trend',
+        notes: mkNotes(d.notes),
+      };
+    } else if (this.state.selectedType === 'segment') {
+      const segment = segmentByKey[this.state.selectedKey];
+      const d = trendByName[segment.theme];
+      selected = {
+        eyebrow: `Market Segment ${segment.focus}`, title: segment.segment,
+        description: `${d.name} is the highest ${segment.focus.toLowerCase()} for ${segment.segment}. ${d.description}`,
+        metricOneLabel: segment.focus, metricOneValue: d.name,
+        metricTwoLabel: 'Business impact', metricTwoValue: d.impact,
+        hasDetails: false, detailTitle: '', details: [],
+        noteContext: `${segment.segment} accounts and sales calls supporting this ${segment.focus.toLowerCase()}`,
         notes: mkNotes(d.notes),
       };
     } else if (this.state.selectedType === 'region') {
@@ -311,7 +346,7 @@ class Component extends DCLogic {
           tagStyle: this.sentimentTag(signal),
           rowStyle: `display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center;padding:9px 14px;${i === d.themes.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
         })),
-        noteContext: `${name} accounts and sales calls · June 1–30, 2026`,
+        noteContext: `${name} accounts and sales calls`,
         notes: mkNotes(d.notes),
       };
     }
