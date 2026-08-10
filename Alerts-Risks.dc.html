@@ -351,13 +351,14 @@ class Component extends DCLogic {
     const filteredRiskRaw = riskRaw.filter(r => severityMatch(r.severity) && regionMatch(r.regions) && productMatch(r.products));
     const filteredAccountRaw = accountsRaw.filter(a => severityMatch(a.severity) && regionMatch([a.region]) && productMatch([a.product]));
     const filteredRegionRaw = regionRaw.filter(r => severityMatch(r.severity) && regionMatch([r.name]) && productMatch([r.product]));
+    const visibleRiskRaw = filteredRiskRaw.slice(0, 5);
 
     const openRisk = name => () => this.setState({ drawer: { type: 'risk', key: name }, openFilter: null });
-    const riskCats = filteredRiskRaw.map((r, i) => ({
+    const riskCats = visibleRiskRaw.map((r, i) => ({
       rank: i + 1, name: r.name, value: r.value.toLocaleString(), severity: r.severity, trend: r.trend, status: r.status,
       description: r.description, trendIcon: trendIcon[r.trend], severityStyle: this.riskBadge(r.severity),
       trendStyle: this.trendBadge(r.trend), statusStyle: this.statusBadge(r.status), select: openRisk(r.name),
-      rowStyle: `width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:none;${i === filteredRiskRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}padding:11px 0;text-align:left;font-family:inherit;cursor:pointer;`,
+      rowStyle: 'width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:none;padding:11px 0;text-align:left;font-family:inherit;cursor:pointer;',
     }));
     const accounts = filteredAccountRaw.map((a, i) => ({
       n: i + 1, name: a.name, region: a.region, product: a.product, severity: a.severity, status: a.status,
@@ -369,7 +370,7 @@ class Component extends DCLogic {
       rank: i + 1, name: r.name, accounts: r.accounts, severity: r.severity, issue: r.issue, product: r.product,
       trend: r.trend, status: r.status, trendIcon: trendIcon[r.trend], severityStyle: this.riskBadge(r.severity),
       trendStyle: this.trendBadge(r.trend), statusStyle: this.statusBadge(r.status), select: openRisk(r.issue),
-      rowStyle: `width:100%;display:flex;align-items:center;gap:12px;background:transparent;border:none;${i === filteredRegionRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}padding:10px 0;text-align:left;font-family:inherit;cursor:pointer;`,
+      rowStyle: 'width:100%;display:flex;align-items:center;gap:12px;background:transparent;border:none;padding:10px 0;text-align:left;font-family:inherit;cursor:pointer;',
     }));
 
     const filterDefs = [
@@ -412,9 +413,10 @@ class Component extends DCLogic {
       };
     }
 
+    const countLabel = (count, label) => `${count} ${label}${count === 1 ? '' : 's'}`;
     return {
       filters, riskCats, accounts, regions,
-      resultSummary: `${riskCats.length} risks · ${accounts.length} accounts · ${regions.length} regions`,
+      resultSummary: `${countLabel(riskCats.length, 'risk')} · ${countLabel(accounts.length, 'account')} · ${countLabel(regions.length, 'region')}`,
       clearFilters: () => this.setState({ severity: 'All', region: 'All', product: 'All', openFilter: null }),
       drawerOpen: !!this.state.drawer, selected,
       closeDrawer: () => this.setState({ drawer: null }),
