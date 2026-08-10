@@ -62,59 +62,63 @@
   </div>
 
   <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin-top:20px;align-items:stretch;">
-    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+    <div style="height:500px;box-sizing:border-box;background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;display:flex;flex-direction:column;">
       <div style="font-size:15px;font-weight:600;color:#101828;">Top Risk Categories</div>
       <div style="font-size:11.5px;color:#667085;margin-top:3px;margin-bottom:7px;">Select a category to review impacted accounts, call plans, and the AI-generated risk summary.</div>
-      <sc-for list="{{riskCats}}" as="r" hint-placeholder-count="6">
-        <button onClick="{{r.select}}" style="{{r.rowStyle}}">
-          <div style="width:28px;height:28px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{r.rank}}</div>
-          <div style="flex:1;min-width:0;">
-            <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
-              <span style="font-size:13.5px;font-weight:600;color:#101828;">{{r.name}}</span>
-              <span style="{{r.severityStyle}}">{{r.severity}}</span>
-              <span style="{{r.statusStyle}}">{{r.status}}</span>
+      <div style="overflow-y:auto;min-height:0;padding-right:4px;">
+        <sc-for list="{{riskCats}}" as="r" hint-placeholder-count="5">
+          <button onClick="{{r.select}}" style="{{r.rowStyle}}">
+            <div style="width:28px;height:28px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{r.rank}}</div>
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+                <span style="font-size:13.5px;font-weight:600;color:#101828;">{{r.name}}</span>
+                <span style="{{r.severityStyle}}">{{r.severity}}</span>
+                <span style="{{r.statusStyle}}">{{r.status}}</span>
+              </div>
+              <div style="font-size:12px;color:#667085;line-height:1.45;margin-top:3px;">{{r.description}}</div>
             </div>
-            <div style="font-size:12px;color:#667085;line-height:1.45;margin-top:3px;">{{r.description}}</div>
-          </div>
-          <div style="text-align:right;flex-shrink:0;">
-            <div style="font-size:12.5px;font-weight:700;color:#101828;">{{r.value}} accounts</div>
-            <span style="{{r.trendStyle}}">{{r.trendIcon}} {{r.trend}}</span>
-          </div>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </sc-for>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:12.5px;font-weight:700;color:#101828;">{{r.value}} accounts</div>
+              <span style="{{r.trendStyle}}">{{r.trendIcon}} {{r.trend}}</span>
+            </div>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </sc-for>
+      </div>
     </div>
 
-    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+    <div style="height:500px;box-sizing:border-box;background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;display:flex;flex-direction:column;">
       <div style="font-size:15px;font-weight:600;color:#101828;">Accounts Most at Risk</div>
       <div style="font-size:11.5px;color:#667085;margin-top:3px;margin-bottom:7px;">Open the Salesforce record or supporting sales call plans directly.</div>
-      <sc-for list="{{accounts}}" as="a" hint-placeholder-count="8">
-        <div style="{{a.rowStyle}}">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:8px;min-width:0;">
-              <div style="width:22px;height:22px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{a.n}}</div>
-              <div style="min-width:0;">
-                <div style="font-size:13px;font-weight:600;color:#101828;">{{a.name}}</div>
-                <div style="font-size:11px;color:#98A2B3;margin-top:1px;">{{a.region}} &middot; {{a.product}}</div>
+      <div style="overflow-y:auto;min-height:0;padding-right:4px;">
+        <sc-for list="{{accounts}}" as="a" hint-placeholder-count="8">
+          <div style="{{a.rowStyle}}">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+              <div style="display:flex;align-items:flex-start;gap:8px;min-width:0;">
+                <div style="width:22px;height:22px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{a.n}}</div>
+                <div style="min-width:0;">
+                  <div style="font-size:13px;font-weight:600;color:#101828;">{{a.name}}</div>
+                  <div style="font-size:11px;color:#98A2B3;margin-top:1px;">{{a.region}} &middot; {{a.product}}</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <span style="{{a.badgeStyle}}">{{a.severity}}</span>
+                <span style="{{a.statusStyle}}">{{a.status}}</span>
               </div>
             </div>
-            <div style="display:flex;align-items:center;gap:5px;">
-              <span style="{{a.badgeStyle}}">{{a.severity}}</span>
-              <span style="{{a.statusStyle}}">{{a.status}}</span>
+            <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px;padding-left:30px;">
+              <span style="font-size:10.5px;color:#98A2B3;">Why high risk:</span>
+              <sc-for list="{{a.factors}}" as="factor" hint-placeholder-count="2">
+                <span style="font-size:10.5px;color:#475467;background:#F2F4F7;border-radius:999px;padding:2px 7px;">{{factor}}</span>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:7px;padding-left:30px;">
+              <a href="{{a.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;font-weight:600;color:#2563EB;text-decoration:none;">Open Salesforce ↗</a>
+              <button onClick="{{a.viewPlans}}" style="background:none;border:none;padding:0;font-family:inherit;font-size:11.5px;font-weight:600;color:#2563EB;cursor:pointer;">View call plans ›</button>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px;padding-left:30px;">
-            <span style="font-size:10.5px;color:#98A2B3;">Why high risk:</span>
-            <sc-for list="{{a.factors}}" as="factor" hint-placeholder-count="2">
-              <span style="font-size:10.5px;color:#475467;background:#F2F4F7;border-radius:999px;padding:2px 7px;">{{factor}}</span>
-            </sc-for>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:7px;padding-left:30px;">
-            <a href="{{a.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;font-weight:600;color:#2563EB;text-decoration:none;">Open Salesforce ↗</a>
-            <button onClick="{{a.viewPlans}}" style="background:none;border:none;padding:0;font-family:inherit;font-size:11.5px;font-weight:600;color:#2563EB;cursor:pointer;">View call plans ›</button>
-          </div>
-        </div>
-      </sc-for>
+        </sc-for>
+      </div>
     </div>
   </div>
 
