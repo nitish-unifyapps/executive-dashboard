@@ -63,18 +63,20 @@
       </sc-for>
     </div>
 
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div style="font-size:15px;font-weight:600;color:#101828;">Strategic Focus Areas</div>
+    <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
+      <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:4px;">Strategic Focus Areas</div>
       <sc-for list="{{focusAreas}}" as="f" hint-placeholder-count="3">
-        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:14px 16px;">
+        <div style="{{f.rowStyle}}">
           <div style="font-size:14px;font-weight:600;color:#101828;">{{f.title}}</div>
           <div style="font-size:12.5px;color:#667085;margin-top:4px;line-height:1.5;">{{f.desc}}</div>
-          <sc-for list="{{f.bullets}}" as="bullet" hint-placeholder-count="3">
-            <div style="display:flex;align-items:flex-start;gap:6px;margin-top:7px;">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" style="margin-top:2px;flex-shrink:0;"><path d="M20 6L9 17l-5-5"/></svg>
-              <span style="font-size:12.5px;color:#344054;">{{bullet}}</span>
-            </div>
-          </sc-for>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-top:7px;">
+            <sc-for list="{{f.bullets}}" as="bullet" hint-placeholder-count="2">
+              <div style="display:flex;align-items:flex-start;gap:6px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" style="margin-top:2px;flex-shrink:0;"><path d="M20 6L9 17l-5-5"/></svg>
+                <span style="font-size:12px;color:#344054;line-height:1.4;">{{bullet}}</span>
+              </div>
+            </sc-for>
+          </div>
         </div>
       </sc-for>
     </div>
@@ -82,12 +84,12 @@
 
   <div style="margin-top:20px;">
     <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Measurable Business Outcomes by Priority</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start;">
       <sc-for list="{{outcomes}}" as="out" hint-placeholder-count="5">
-        <button onClick="{{out.select}}" style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:13px 14px;text-align:left;font-family:inherit;cursor:pointer;width:100%;">
-          <div style="font-size:12.5px;font-weight:600;color:#101828;line-height:1.35;min-height:34px;">{{out.priority}}</div>
-          <div style="font-size:11.5px;color:#667085;line-height:1.4;margin-top:6px;min-height:32px;">{{out.description}}</div>
-          <div style="border-top:1px solid #F0F2F5;margin-top:8px;padding-top:8px;">
+        <button onClick="{{out.select}}" style="display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:13px 14px;text-align:left;font-family:inherit;cursor:pointer;width:100%;">
+          <div style="font-size:12.5px;font-weight:600;color:#101828;line-height:1.35;">{{out.priority}}</div>
+          <div style="font-size:11.5px;color:#667085;line-height:1.4;margin-top:5px;">{{out.description}}</div>
+          <div style="border-top:1px solid #F0F2F5;margin-top:9px;padding-top:8px;">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
               <span style="font-size:10.5px;color:#98A2B3;">Impacted accounts</span>
               <span style="font-size:12.5px;font-weight:700;color:#101828;">{{out.accounts}}</span>
@@ -185,7 +187,10 @@ class Component extends DCLogic {
       ['Operate with Excellence', 'Improve operational execution to protect revenue and customer experience.', ['Improve inventory availability.', 'Enhance order accuracy and fulfillment.']],
       ['Build Strong Relationships', 'Deepen customer relationships and drive engagement to create long term loyalty.', ['Increase in person visits and follow ups.', 'Act on customer needs quickly.']],
     ];
-    const focusAreas = focusAreasRaw.map(([title, desc, bullets]) => ({ title, desc, bullets }));
+    const focusAreas = focusAreasRaw.map(([title, desc, bullets], i) => ({
+      title, desc, bullets,
+      rowStyle: `padding:12px 0;${i === focusAreasRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
+    }));
     const outcomes = [
       ['Improve Inventory Availability', '87', 'Restore availability for priority accounts.'],
       ['Grow Share of Core Products', '142', 'Expand share in high-potential accounts.'],
