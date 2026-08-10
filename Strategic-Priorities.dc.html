@@ -22,62 +22,45 @@
     <div style="font-size:14px;color:#667085;margin-top:4px;">Focus on the actions that drive the greatest impact</div>
   </div>
 
-  <div style="display:flex;background:#fff;border:1px solid #E4E7EC;border-radius:8px;">
-    <div style="flex:1;padding:14px 18px;">
-      <div style="font-size:13px;color:#475467;font-weight:500;">Top Priorities</div>
-      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">5</div>
-      <div style="font-size:12.5px;color:#98A2B3;margin-top:4px;">highest impact areas</div>
+  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI STRATEGIC OUTLOOK</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #16A34A;border-radius:7px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:700;color:#067647;letter-spacing:0.5px;text-transform:uppercase;">Top Strategic Priority</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#344054;margin-top:6px;">Improve inventory availability for high-velocity products and the accounts with the greatest revenue exposure.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #DC2626;border-radius:7px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:700;color:#B42318;letter-spacing:0.5px;text-transform:uppercase;">Biggest Business Risk</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#344054;margin-top:6px;">Inventory and sample delays are putting active opportunities and account retention at immediate risk.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #2563EB;border-radius:7px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:700;color:#1D4ED8;letter-spacing:0.5px;text-transform:uppercase;">Immediate Next Action</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#344054;margin-top:6px;">Assign owners to the 87 affected accounts, resolve priority SKUs, and communicate recovery dates.</div>
+      </div>
     </div>
-    <div style="width:1px;background:#E4E7EC;"></div>
-    <div style="flex:1;padding:14px 18px;">
-      <div style="font-size:13px;color:#475467;font-weight:500;">Recommended Actions</div>
-      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">12</div>
-      <div style="font-size:12.5px;color:#98A2B3;margin-top:4px;">data driven recommendations</div>
-    </div>
-    <div style="width:1px;background:#E4E7EC;"></div>
-    <div style="flex:1;padding:14px 18px;">
-      <div style="font-size:13px;color:#475467;font-weight:500;">Focus Areas</div>
-      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">3</div>
-      <div style="font-size:12.5px;color:#98A2B3;margin-top:4px;">strategic concentrations</div>
-    </div>
-    <div style="width:1px;background:#E4E7EC;"></div>
-    <div style="flex:1;padding:14px 18px;">
-      <div style="font-size:13px;color:#475467;font-weight:500;">Actions In Progress</div>
-      <div style="font-size:26px;font-weight:700;color:#101828;margin-top:6px;">8</div>
-      <div style="font-size:12.5px;color:#98A2B3;margin-top:4px;">underway across the business</div>
-    </div>
-  </div>
-
-  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;margin-top:16px;">
-    <div style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI SUMMARY, STRATEGIC FOCUS</span></div>
-    <div style="font-size:14px;line-height:1.6;color:#344054;margin-top:8px;max-width:1180px;">Five priorities are in focus this quarter, anchored by growing core products and improving inventory availability. Twelve recommended actions are mapped across three strategic focus areas, with eight already underway. The roadmap moves from aligning resources now to sustaining gains beyond 90 days.</div>
   </div>
 
   <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:20px;align-items:start;">
     <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:16px;">
-      <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:2px;">Impact vs Effort</div>
-      <div style="font-size:12px;color:#98A2B3;margin-bottom:14px;">Click a priority to see why it matters and recommended actions</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;">
-        <sc-for list="{{quadrants}}" as="q" hint-placeholder-count="4">
-          <div style="background:#F9FAFB;border:1px solid #EEF1F4;border-radius:8px;padding:12px;min-height:150px;">
-            <div style="font-size:12.5px;font-weight:700;color:#101828;">{{q.title}}</div>
-            <div style="font-size:11px;color:#98A2B3;margin-bottom:8px;">{{q.subtitle}}</div>
-            <sc-for list="{{q.items}}" as="item" hint-placeholder-count="2">
-              <div onClick="{{item.select}}" style="{{item.style}}">
-                <span style="{{item.dotStyle}}">{{item.n}}</span>
-                <span style="font-size:12.5px;font-weight:500;color:#101828;">{{item.name}}</span>
-              </div>
-            </sc-for>
-            <sc-if value="{{q.empty}}" hint-placeholder-val="{{false}}">
-              <div style="font-size:11.5px;color:#B7C0CE;font-style:italic;">No priorities in this range</div>
-            </sc-if>
+      <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:2px;">Top Strategic Priorities</div>
+      <div style="font-size:12px;color:#98A2B3;margin-bottom:8px;">Ranked by business impact and frequency in sales call plans. Select a priority for recommended actions.</div>
+      <sc-for list="{{priorities}}" as="p" hint-placeholder-count="5">
+        <button onClick="{{p.select}}" style="{{p.rowStyle}}">
+          <div style="width:30px;height:30px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{p.rank}}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-size:13.5px;font-weight:600;color:#101828;">{{p.name}}</span>
+              <span style="{{p.impactStyle}}">{{p.impact}} impact</span>
+            </div>
+            <div style="font-size:12px;color:#667085;line-height:1.45;margin-top:3px;">{{p.summary}}</div>
           </div>
-        </sc-for>
-      </div>
-      <div style="display:flex;justify-content:space-between;margin-top:10px;padding:0 4px;">
-        <span style="font-size:11px;color:#98A2B3;">← Lower Effort</span>
-        <span style="font-size:11px;color:#98A2B3;">Higher Effort →</span>
-      </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-size:12.5px;font-weight:700;color:#101828;">{{p.planMentions}} mentions</div>
+            <div style="font-size:10.5px;color:#667085;margin-top:2px;">{{p.planFrequency}} of sales call plans</div>
+          </div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </sc-for>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:14px;">
@@ -98,14 +81,24 @@
   </div>
 
   <div style="margin-top:20px;">
-    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Success Indicators</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
-      <sc-for list="{{indicators}}" as="ind" hint-placeholder-count="4">
-        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:14px;display:flex;gap:10px;align-items:flex-start;">
-          <div style="width:30px;height:30px;border-radius:999px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#2563EB;">{{ind.icon}}</div>
-          <div>
-            <div style="font-size:13.5px;font-weight:600;color:#101828;">{{ind.title}}</div>
-            <div style="font-size:12px;color:#667085;margin-top:3px;line-height:1.4;">{{ind.desc}}</div>
+    <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Measurable Business Outcomes by Priority</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+      <sc-for list="{{outcomes}}" as="out" hint-placeholder-count="5">
+        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:13px 14px;">
+          <div style="font-size:12.5px;font-weight:600;color:#101828;line-height:1.35;min-height:34px;">{{out.priority}}</div>
+          <div style="border-top:1px solid #F0F2F5;margin-top:8px;padding-top:8px;display:flex;flex-direction:column;gap:7px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+              <span style="font-size:10.5px;color:#98A2B3;">Impacted accounts</span>
+              <span style="font-size:12.5px;font-weight:700;color:#101828;">{{out.accounts}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+              <span style="font-size:10.5px;color:#98A2B3;">Revenue opportunity</span>
+              <span style="font-size:12.5px;font-weight:700;color:#101828;">{{out.revenue}}</span>
+            </div>
+            <div>
+              <div style="font-size:10.5px;color:#98A2B3;">Target outcome</div>
+              <div style="font-size:12px;font-weight:600;color:#2563EB;line-height:1.35;margin-top:2px;">{{out.target}}</div>
+            </div>
           </div>
         </div>
       </sc-for>
@@ -141,9 +134,10 @@
       <div style="font-size:18px;font-weight:700;color:#101828;max-width:300px;">{{selected.name}}</div>
       <button onClick="{{closeDrawer}}" style="background:none;border:none;cursor:pointer;color:#667085;font-size:18px;padding:0;line-height:1;">×</button>
     </div>
-    <div style="display:flex;gap:8px;margin-top:10px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
       <span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:#F2F4F7;color:#344054;">Impact: {{selected.impact}}</span>
       <span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:#F2F4F7;color:#344054;">Effort: {{selected.effort}}</span>
+      <span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:#EFF6FF;color:#1D4ED8;">{{selected.planMentions}} plan mentions · {{selected.planFrequency}}</span>
     </div>
     <div style="margin-top:20px;">
       <div style="font-size:12px;font-weight:700;color:#667085;text-transform:uppercase;letter-spacing:0.4px;">Why it matters</div>
@@ -159,60 +153,48 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { selectedIdx: null };
+  impactBadge(impact) {
+    const c = impact === 'High'
+      ? { bg: '#EFF6FF', fg: '#1D4ED8' }
+      : { bg: '#F2F4F7', fg: '#475467' };
+    return `font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;`;
+  }
   renderVals() {
     const prioritiesRaw = [
-      ['Grow Share of Core Products', 'High', 'Medium', 'Strong demand in key accounts, opportunity to increase share.', 'Focus on high potential accounts, promote core product advantages.'],
-      ['Improve Inventory Availability', 'High', 'High', 'Inventory issues causing delays, impacting customer satisfaction.', 'Address at risk inventory items, strengthen supply chain communication.'],
-      ['Strengthen Customer Engagement', 'Medium', 'Low', 'Engagement drives retention, high potential in active accounts.', 'Increase in person interactions, follow up on open opportunities.'],
-      ['Address Pricing Objections', 'Medium', 'Medium', 'Pricing is the top reason for loss, competitors more aggressive.', 'Share value and differentiation, equip teams with objection responses.'],
-      ['Drive New Product Adoption', 'Medium', 'Low', 'New products gaining traction, early adopters seeing results.', 'Identify target accounts, share success stories and samples.'],
+      ['Improve Inventory Availability', 'High', 'High', 184, '42%', 'Resolve stock and sample constraints in revenue-critical accounts.', 'Inventory issues are delaying orders, reducing confidence, and increasing switching risk in high-value accounts.', 'Assign owners to the 87 affected accounts, prioritize constrained SKUs, and communicate reliable recovery dates.'],
+      ['Grow Share of Core Products', 'High', 'Medium', 156, '36%', 'Expand Pet Perfect and LVP in high-potential accounts.', 'Strong product demand creates a near-term opportunity to increase share and deepen placement in priority accounts.', 'Focus on 142 high-potential accounts, expand displays, and promote core product advantages with account-specific offers.'],
+      ['Strengthen Customer Engagement', 'Medium', 'Low', 121, '28%', 'Re-engage low-activity and at-risk accounts.', 'Consistent engagement protects retention and improves conversion across active opportunities.', 'Increase in-person interactions, schedule follow-ups on open opportunities, and assign recovery plans to low-activity accounts.'],
+      ['Address Pricing Objections', 'Medium', 'Medium', 98, '23%', 'Improve value messaging in price-sensitive accounts.', 'Pricing pressure is a leading reason for lost opportunities as competitors increase promotional activity.', 'Equip teams with objection responses, comparable-value proof points, and targeted pricing guidance for at-risk deals.'],
+      ['Drive New Product Adoption', 'Medium', 'Low', 74, '17%', 'Convert early interest into new product placements.', 'New products are gaining traction, but adoption depends on faster education, samples, and display support.', 'Identify target accounts, distribute launch samples, and share early success stories to accelerate placement.'],
     ];
-    const bubbles = prioritiesRaw.map(([name, impact, effort, why, actions], i) => {
-      const active = this.state.selectedIdx === i;
-      return {
-        n: i + 1, name, impact, effort, why, actions,
-        dotStyle: `width:18px;height:18px;border-radius:999px;background:${active ? '#1D4ED8' : '#2563EB'};color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;`,
-        style: `display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;margin-top:4px;background:${active ? '#EFF6FF' : 'transparent'};`,
-        select: () => this.setState({ selectedIdx: i }),
-      };
-    });
-    const quadDefs = [
-      { title: 'Quick Wins', subtitle: 'High Impact, Low Effort', impact: 'High', effort: 'Low' },
-      { title: 'Major Projects', subtitle: 'High Impact, Higher Effort', impact: 'High', effort: 'NotLow' },
-      { title: 'Fill-Ins', subtitle: 'Lower Impact, Low Effort', impact: 'NotHigh', effort: 'Low' },
-      { title: 'Reconsider', subtitle: 'Lower Impact, Higher Effort', impact: 'NotHigh', effort: 'NotLow' },
-    ];
-    const matches = (bucket, level) => {
-      if (bucket === 'High') return level === 'High';
-      if (bucket === 'NotHigh') return level !== 'High';
-      if (bucket === 'Low') return level === 'Low';
-      if (bucket === 'NotLow') return level !== 'Low';
-    };
-    const quadrants = quadDefs.map(q => {
-      const items = bubbles.filter(b => matches(q.impact, b.impact) && matches(q.effort, b.effort));
-      return { title: q.title, subtitle: q.subtitle, items, empty: items.length === 0 };
-    });
+    const priorities = prioritiesRaw.map(([name, impact, effort, planMentions, planFrequency, summary, why, actions], i) => ({
+      rank: i + 1, name, impact, effort, planMentions: planMentions.toLocaleString(), planFrequency, summary, why, actions,
+      impactStyle: this.impactBadge(impact),
+      rowStyle: `width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:none;${i === prioritiesRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}padding:12px 0;text-align:left;font-family:inherit;cursor:pointer;`,
+      select: () => this.setState({ selectedIdx: i }),
+    }));
     const focusAreasRaw = [
       ['Grow Our Core', 'Strengthen leadership in core categories and expand in key accounts.', ['Grow share of core products.', 'Increase penetration in high potential accounts.', 'Drive value through solutions.']],
       ['Operate with Excellence', 'Improve operational execution to protect revenue and customer experience.', ['Improve inventory availability.', 'Enhance order accuracy and fulfillment.', 'Strengthen communication across delivery timelines.']],
       ['Build Strong Relationships', 'Deepen customer relationships and drive engagement to create long term loyalty.', ['Increase in person visits and follow ups.', 'Act on customer needs quickly.', 'Develop champions in key accounts.']],
     ];
     const focusAreas = focusAreasRaw.map(([title, desc, bullets]) => ({ title, desc, bullets }));
-    const indicators = [
-      ['↑', 'Share Growth', 'in core products'],
-      ['✓', 'Operational Reliability', 'fewer delays and improved accuracy'],
-      ['◆', 'Customer Engagement', 'more active and loyal accounts'],
-      ['★', 'Win Rate Improvement', 'stronger value and differentiation'],
-    ].map(([icon, title, desc]) => ({ icon, title, desc }));
+    const outcomes = [
+      ['Improve Inventory Availability', '87', '$4.2M', '30% fewer inventory issues'],
+      ['Grow Share of Core Products', '142', '$6.8M', '+5 pts core-product share'],
+      ['Strengthen Customer Engagement', '156', '$3.1M', '20% more active engagement'],
+      ['Address Pricing Objections', '98', '$2.7M', '+8% competitive win rate'],
+      ['Drive New Product Adoption', '64', '$1.9M', '35 new product placements'],
+    ].map(([priority, accounts, revenue, target]) => ({ priority, accounts, revenue, target }));
     const steps = [
       [1, 'Focus and Align', 'Align resources on top priorities and highest opportunity accounts.', '0 to 30 days'],
       [2, 'Execute and Accelerate', 'Execute recommended actions and remove barriers.', '31 to 60 days'],
       [3, 'Measure and Optimize', 'Measure impact and optimize based on results.', '61 to 90 days'],
       [4, 'Sustain and Grow', 'Sustain progress and scale what works.', '90 plus days'],
     ].map(([n, title, desc, time]) => ({ n, title, desc, time }));
-    const selected = this.state.selectedIdx !== null ? bubbles[this.state.selectedIdx] : null;
+    const selected = this.state.selectedIdx !== null ? priorities[this.state.selectedIdx] : null;
     return {
-      quadrants, focusAreas, indicators, steps,
+      priorities, focusAreas, outcomes, steps,
       drawerOpen: this.state.selectedIdx !== null,
       selected: selected || {},
       closeDrawer: () => this.setState({ selectedIdx: null }),
