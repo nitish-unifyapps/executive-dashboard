@@ -84,23 +84,17 @@
     <div style="font-size:15px;font-weight:600;color:#101828;margin-bottom:10px;">Measurable Business Outcomes by Priority</div>
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
       <sc-for list="{{outcomes}}" as="out" hint-placeholder-count="5">
-        <div style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:13px 14px;">
+        <button onClick="{{out.select}}" style="background:#fff;border:1px solid #E4E7EC;border-radius:8px;padding:13px 14px;text-align:left;font-family:inherit;cursor:pointer;width:100%;">
           <div style="font-size:12.5px;font-weight:600;color:#101828;line-height:1.35;min-height:34px;">{{out.priority}}</div>
-          <div style="border-top:1px solid #F0F2F5;margin-top:8px;padding-top:8px;display:flex;flex-direction:column;gap:7px;">
+          <div style="font-size:11.5px;color:#667085;line-height:1.4;margin-top:6px;min-height:32px;">{{out.description}}</div>
+          <div style="border-top:1px solid #F0F2F5;margin-top:8px;padding-top:8px;">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
               <span style="font-size:10.5px;color:#98A2B3;">Impacted accounts</span>
               <span style="font-size:12.5px;font-weight:700;color:#101828;">{{out.accounts}}</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
-              <span style="font-size:10.5px;color:#98A2B3;">Revenue opportunity</span>
-              <span style="font-size:12.5px;font-weight:700;color:#101828;">{{out.revenue}}</span>
-            </div>
-            <div>
-              <div style="font-size:10.5px;color:#98A2B3;">Target outcome</div>
-              <div style="font-size:12px;font-weight:600;color:#2563EB;line-height:1.35;margin-top:2px;">{{out.target}}</div>
-            </div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:#2563EB;margin-top:8px;">View account evidence <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
           </div>
-        </div>
+        </button>
       </sc-for>
     </div>
   </div>
@@ -147,6 +141,18 @@
       <div style="font-size:12px;font-weight:700;color:#667085;text-transform:uppercase;letter-spacing:0.4px;">Recommended actions</div>
       <div style="font-size:13.5px;color:#344054;line-height:1.6;margin-top:6px;">{{selected.actions}}</div>
     </div>
+    <div style="margin-top:20px;">
+      <div style="font-size:12px;font-weight:700;color:#667085;text-transform:uppercase;letter-spacing:0.4px;">Supporting account call notes</div>
+      <sc-for list="{{selected.notes}}" as="note" hint-placeholder-count="2">
+        <div style="border:1px solid #E4E7EC;border-radius:8px;padding:11px 12px;margin-top:9px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;">
+            <div style="font-size:11.5px;font-weight:600;color:#344054;">{{note.account}} · {{note.id}}</div>
+            <div style="font-size:10.5px;color:#98A2B3;white-space:nowrap;">{{note.date}}</div>
+          </div>
+          <div style="font-size:12.5px;color:#475467;line-height:1.5;">{{note.text}}</div>
+        </div>
+      </sc-for>
+    </div>
   </div>
 </sc-if>
 </x-dc>
@@ -161,31 +167,34 @@ class Component extends DCLogic {
   }
   renderVals() {
     const prioritiesRaw = [
-      ['Improve Inventory Availability', 'High', 'High', 184, '42%', 'Resolve stock and sample constraints in revenue-critical accounts.', 'Inventory issues are delaying orders, reducing confidence, and increasing switching risk in high-value accounts.', 'Assign owners to the 87 affected accounts, prioritize constrained SKUs, and communicate reliable recovery dates.'],
-      ['Grow Share of Core Products', 'High', 'Medium', 156, '36%', 'Expand Pet Perfect and LVP in high-potential accounts.', 'Strong product demand creates a near-term opportunity to increase share and deepen placement in priority accounts.', 'Focus on 142 high-potential accounts, expand displays, and promote core product advantages with account-specific offers.'],
-      ['Strengthen Customer Engagement', 'Medium', 'Low', 121, '28%', 'Re-engage low-activity and at-risk accounts.', 'Consistent engagement protects retention and improves conversion across active opportunities.', 'Increase in-person interactions, schedule follow-ups on open opportunities, and assign recovery plans to low-activity accounts.'],
-      ['Address Pricing Objections', 'Medium', 'Medium', 98, '23%', 'Improve value messaging in price-sensitive accounts.', 'Pricing pressure is a leading reason for lost opportunities as competitors increase promotional activity.', 'Equip teams with objection responses, comparable-value proof points, and targeted pricing guidance for at-risk deals.'],
-      ['Drive New Product Adoption', 'Medium', 'Low', 74, '17%', 'Convert early interest into new product placements.', 'New products are gaining traction, but adoption depends on faster education, samples, and display support.', 'Identify target accounts, distribute launch samples, and share early success stories to accelerate placement.'],
+      ['Improve Inventory Availability', 'High', 'High', 184, '42%', 'Resolve stock and sample constraints in revenue-critical accounts.', 'Inventory issues are delaying orders, reducing confidence, and increasing switching risk in high-value accounts.', 'Assign owners to the 87 affected accounts, prioritize constrained SKUs, and communicate reliable recovery dates.', [['Premier Floors', '0142207', '9 Jun 2026', 'Backorders on core LVP styles pushed two customer orders beyond three weeks.'], ['Carpet World Distributors', '0118830', '15 Jun 2026', 'Repeated short shipments are holding orders and weakening account confidence.']]],
+      ['Grow Share of Core Products', 'High', 'Medium', 156, '36%', 'Expand Pet Perfect and LVP in high-potential accounts.', 'Strong product demand creates a near-term opportunity to increase share and deepen placement in priority accounts.', 'Focus on 142 high-potential accounts, expand displays, and promote core product advantages with account-specific offers.', [['Flooring Solutions Inc.', '0114892', '12 Jun 2026', 'Account requested additional Pet Perfect displays for its showroom floor.'], ['Coastal Flooring Group', '0139204', '18 Jun 2026', 'Pet Perfect samples are moving faster than any other SKU this month.']]],
+      ['Strengthen Customer Engagement', 'Medium', 'Low', 121, '28%', 'Re-engage low-activity and at-risk accounts.', 'Consistent engagement protects retention and improves conversion across active opportunities.', 'Increase in-person interactions, schedule follow-ups on open opportunities, and assign recovery plans to low-activity accounts.', [['Sac Floor Store Inc.', '0121438', '6 Jun 2026', 'Dealer requested a follow-up visit after more than 60 days without rep contact.'], ['HomeStyle Interiors', '0157732', '20 Jun 2026', 'Customer asked for a clearer follow-up plan on two open opportunities.']]],
+      ['Address Pricing Objections', 'Medium', 'Medium', 98, '23%', 'Improve value messaging in price-sensitive accounts.', 'Pricing pressure is a leading reason for lost opportunities as competitors increase promotional activity.', 'Equip teams with objection responses, comparable-value proof points, and targeted pricing guidance for at-risk deals.', [['Design Center Pro', '0148821', '14 Jun 2026', 'Competitor reps are undercutting price on comparable carpet and LVP lines.'], ['HomeStyle Interiors', '0157732', '20 Jun 2026', 'Customer raised a price objection tied directly to a competitor promotion.']]],
+      ['Drive New Product Adoption', 'Medium', 'Low', 74, '17%', 'Convert early interest into new product placements.', 'New products are gaining traction, but adoption depends on faster education, samples, and display support.', 'Identify target accounts, distribute launch samples, and share early success stories to accelerate placement.', [['Amparan Flooring', '0192186', '23 Jun 2026', 'Account wants to add the new LVP collection to its fall showroom reset.'], ['Design Center Pro', '0148821', '17 Jun 2026', 'Dealer requested early samples and launch timing for the rigid-core line.']]],
     ];
-    const priorities = prioritiesRaw.map(([name, impact, effort, planMentions, planFrequency, summary, why, actions], i) => ({
+    const priorities = prioritiesRaw.map(([name, impact, effort, planMentions, planFrequency, summary, why, actions, notes], i) => ({
       rank: i + 1, name, impact, effort, planMentions: planMentions.toLocaleString(), planFrequency, summary, why, actions,
+      notes: notes.map(([account, id, date, text]) => ({ account, id, date, text })),
       impactStyle: this.impactBadge(impact),
       rowStyle: `width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:none;${i === prioritiesRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}padding:12px 0;text-align:left;font-family:inherit;cursor:pointer;`,
       select: () => this.setState({ selectedIdx: i }),
     }));
     const focusAreasRaw = [
-      ['Grow Our Core', 'Strengthen leadership in core categories and expand in key accounts.', ['Grow share of core products.', 'Increase penetration in high potential accounts.', 'Drive value through solutions.']],
-      ['Operate with Excellence', 'Improve operational execution to protect revenue and customer experience.', ['Improve inventory availability.', 'Enhance order accuracy and fulfillment.', 'Strengthen communication across delivery timelines.']],
-      ['Build Strong Relationships', 'Deepen customer relationships and drive engagement to create long term loyalty.', ['Increase in person visits and follow ups.', 'Act on customer needs quickly.', 'Develop champions in key accounts.']],
+      ['Grow Our Core', 'Strengthen leadership in core categories and expand in key accounts.', ['Grow share of core products.', 'Increase penetration in high potential accounts.']],
+      ['Operate with Excellence', 'Improve operational execution to protect revenue and customer experience.', ['Improve inventory availability.', 'Enhance order accuracy and fulfillment.']],
+      ['Build Strong Relationships', 'Deepen customer relationships and drive engagement to create long term loyalty.', ['Increase in person visits and follow ups.', 'Act on customer needs quickly.']],
     ];
     const focusAreas = focusAreasRaw.map(([title, desc, bullets]) => ({ title, desc, bullets }));
     const outcomes = [
-      ['Improve Inventory Availability', '87', '$4.2M', '30% fewer inventory issues'],
-      ['Grow Share of Core Products', '142', '$6.8M', '+5 pts core-product share'],
-      ['Strengthen Customer Engagement', '156', '$3.1M', '20% more active engagement'],
-      ['Address Pricing Objections', '98', '$2.7M', '+8% competitive win rate'],
-      ['Drive New Product Adoption', '64', '$1.9M', '35 new product placements'],
-    ].map(([priority, accounts, revenue, target]) => ({ priority, accounts, revenue, target }));
+      ['Improve Inventory Availability', '87', 'Restore availability for priority accounts.'],
+      ['Grow Share of Core Products', '142', 'Expand share in high-potential accounts.'],
+      ['Strengthen Customer Engagement', '156', 'Re-engage low-activity customer accounts.'],
+      ['Address Pricing Objections', '98', 'Protect deals from pricing pressure.'],
+      ['Drive New Product Adoption', '64', 'Accelerate new product account placements.'],
+    ].map(([priority, accounts, description], i) => ({
+      priority, accounts, description, select: () => this.setState({ selectedIdx: i }),
+    }));
     const steps = [
       [1, 'Focus and Align', 'Align resources on top priorities and highest opportunity accounts.', '0 to 30 days'],
       [2, 'Execute and Accelerate', 'Execute recommended actions and remove barriers.', '31 to 60 days'],
