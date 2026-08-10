@@ -72,23 +72,19 @@
           <div style="display:flex;align-items:flex-start;gap:10px;">
             <div style="width:28px;height:28px;border-radius:999px;background:#F2F4F7;color:#475467;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{s.rank}}</div>
             <div style="flex:1;min-width:0;">
-              <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:7px;">{{s.name}}</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                <button onClick="{{s.oppSelect}}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;background:transparent;border:1px solid #E4E7EC;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
-                  <div>
-                    <div style="font-size:10.5px;font-weight:700;color:#067647;text-transform:uppercase;letter-spacing:0.4px;">Opportunity</div>
-                    <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.opportunity}}</div>
-                  </div>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-                <button onClick="{{s.riskSelect}}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;background:transparent;border:1px solid #E4E7EC;border-radius:6px;padding:8px 9px;text-align:left;font-family:inherit;cursor:pointer;">
-                  <div>
-                    <div style="font-size:10.5px;font-weight:700;color:#B42318;text-transform:uppercase;letter-spacing:0.4px;">Risk</div>
-                    <div style="font-size:12px;font-weight:600;color:#101828;line-height:1.35;margin-top:3px;">{{s.risk}}</div>
-                  </div>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
+              <div style="font-size:13.5px;font-weight:600;color:#101828;margin-bottom:4px;">{{s.name}}</div>
+              <button onClick="{{s.oppSelect}}" style="width:100%;display:flex;align-items:center;gap:9px;background:transparent;border:none;padding:6px 0;text-align:left;font-family:inherit;cursor:pointer;">
+                <span style="font-size:12.5px;font-weight:600;color:#101828;white-space:nowrap;">{{s.opportunity}}</span>
+                <span style="font-size:11.5px;color:#667085;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;">{{s.opportunityDesc}}</span>
+                <span style="font-size:10.5px;font-weight:600;color:#067647;border:1px solid #A6F4C5;border-radius:999px;padding:2px 7px;white-space:nowrap;">Opportunity</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <button onClick="{{s.riskSelect}}" style="width:100%;display:flex;align-items:center;gap:9px;background:transparent;border:none;border-top:1px solid #F2F4F7;padding:6px 0;text-align:left;font-family:inherit;cursor:pointer;">
+                <span style="font-size:12.5px;font-weight:600;color:#101828;white-space:nowrap;">{{s.risk}}</span>
+                <span style="font-size:11.5px;color:#667085;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;">{{s.riskDesc}}</span>
+                <span style="font-size:10.5px;font-weight:600;color:#B42318;border:1px solid #FECDCA;border-radius:999px;padding:2px 7px;white-space:nowrap;">Risk</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2B3" stroke-width="2" style="flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -203,42 +199,49 @@ class Component extends DCLogic {
       {
         name: 'LVP/LVT Demand', kind: 'Opportunity', impact: 'Very High', mentions: 12842,
         summary: 'Strong demand for waterproof styles and broader assortments.',
+        segmentSummary: 'Waterproof demand remains strong.',
         description: 'Waterproof resilient flooring demand is the strongest cross-segment growth signal, with repeated requests for broader colors, displays, and local stock.',
         notes: [['Premier Floors', '0142207', '8 Jun 2026', 'Dealer requested a broader locally stocked LVP color range to support rising homeowner demand.'], ['Metro Design Center', '0164092', '19 Jun 2026', 'Account reported LVP quote volume is up and asked for an additional waterproof display.']],
       },
       {
         name: 'Inventory/Sample Delays', kind: 'Risk', impact: 'Very High', mentions: 6231,
         summary: 'Stock and sample delays are slowing active opportunities.',
+        segmentSummary: 'Delays slow active sales opportunities.',
         description: 'Stock gaps and slow sample delivery are delaying quotes, holding orders, and increasing the likelihood that accounts shift demand to competitors.',
         notes: [['Premier Floors', '0142207', '9 Jun 2026', 'Backorders on core LVP styles pushed two customer orders beyond three weeks.'], ['Builders Choice', '0125517', '11 Jun 2026', 'Sample requests are taking over a week to arrive, slowing active quotes.']],
       },
       {
         name: 'Competitor Pricing', kind: 'Risk', impact: 'High', mentions: 7892,
         summary: 'Aggressive promotions are driving price objections.',
+        segmentSummary: 'Promotions increase pricing pressure.',
         description: 'Aggressive promotional pricing is raising objections in price-sensitive accounts and putting pressure on share in commercial and value segments.',
         notes: [['Design Center Pro', '0148821', '14 Jun 2026', 'Account said competitor reps are undercutting comparable carpet and LVP lines.'], ['HomeStyle Interiors', '0157732', '20 Jun 2026', 'Customer raised a price objection tied directly to a competitor promotion.']],
       },
       {
         name: 'Pet Perfect', kind: 'Opportunity', impact: 'High', mentions: 8736,
         summary: 'Pet-focused performance continues to drive display demand.',
+        segmentSummary: 'Pet performance drives showroom demand.',
         description: 'Pet-friendly performance remains a strong purchase driver, with dealers requesting more displays and reporting faster sample movement.',
         notes: [['Flooring Solutions Inc.', '0114892', '12 Jun 2026', 'Account requested additional Pet Perfect displays for the showroom floor.'], ['Coastal Flooring Group', '0139204', '18 Jun 2026', 'Pet Perfect samples are moving faster than any other SKU this month.']],
       },
       {
         name: 'Staff Reductions', kind: 'Risk', impact: 'Medium', mentions: 4891,
         summary: 'Reduced staffing is slowing follow-up and bids.',
+        segmentSummary: 'Staffing gaps slow account follow-up.',
         description: 'Reduced staffing at dealer and commercial accounts is slowing follow-up, merchandising resets, and bid turnaround.',
         notes: [['Northeast Flooring Group', '0182304', '10 Jun 2026', 'Account reduced sales coverage and postponed two planned showroom resets.'], ['Commercial Flooring Partners', '0170491', '24 Jun 2026', 'Estimator shortages are extending bid response times for active projects.']],
       },
       {
         name: 'New Product Launches', kind: 'Opportunity', impact: 'Medium', mentions: 2900,
         summary: 'New launches are creating display expansion opportunities.',
+        segmentSummary: 'New launches create display opportunities.',
         description: 'New rigid-core and premium visual launches are generating early interest and creating openings for display expansion.',
         notes: [['Design Center Pro', '0148821', '17 Jun 2026', 'Dealer asked for early samples and launch timing for the new rigid-core line.'], ['Amparan Flooring', '0192186', '23 Jun 2026', 'Account expressed strong interest in adding the new collection to its fall reset.']],
       },
       {
         name: 'Credit Holds', kind: 'Risk', impact: 'Medium', mentions: 3460,
         summary: 'Credit holds are delaying healthy-account replenishment.',
+        segmentSummary: 'Credit constraints delay replenishment orders.',
         description: 'Credit constraints are delaying replenishment in otherwise healthy accounts and weakening confidence in near-term availability.',
         notes: [['Western Flooring Supply', '0176208', '13 Jun 2026', 'Account delayed a replenishment order while waiting for its credit limit review.'], ['Builders Choice', '0125517', '26 Jun 2026', 'A temporary credit hold paused an order tied to a multifamily installation.']],
       },
@@ -267,6 +270,8 @@ class Component extends DCLogic {
       segmentByKey[riskKey] = { segment: name, focus: 'Risk', theme: risk };
       return {
         rank: i + 1, name, opportunity, risk,
+        opportunityDesc: trendByName[opportunity].segmentSummary,
+        riskDesc: trendByName[risk].segmentSummary,
         oppSelect: () => this.setState({ selectedType: 'segment', selectedKey: opportunityKey }),
         riskSelect: () => this.setState({ selectedType: 'segment', selectedKey: riskKey }),
         rowStyle: `padding:11px 0;${i === segmentsRaw.length - 1 ? '' : 'border-bottom:1px solid #F0F2F5;'}`,
