@@ -22,8 +22,8 @@
     <div style="font-size:14px;color:#667085;margin-top:4px;">Proactive awareness of threats and emerging issues</div>
   </div>
 
-  <div style="background:#EFF6FF;border-radius:8px;padding:16px 20px;">
-    <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#1D4ED8;letter-spacing:0.6px;">AI RISK OUTLOOK</span></div>
+  <div style="background:#EDF5F7;border-radius:8px;padding:16px 20px;">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#003E51"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8z"/></svg><span style="font-size:11.5px;font-weight:700;color:#003E51;letter-spacing:0.6px;">AI RISK OUTLOOK</span></div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
       <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #DC2626;border-radius:7px;padding:12px 14px;">
         <div style="font-size:11px;font-weight:700;color:#B42318;letter-spacing:0.5px;text-transform:uppercase;">Top Risk</div>
@@ -33,8 +33,8 @@
         <div style="font-size:11px;font-weight:700;color:#B54708;letter-spacing:0.5px;text-transform:uppercase;">Highest Impacted Accounts</div>
         <div style="font-size:13.5px;line-height:1.55;color:#344054;margin-top:6px;">Flooring Solutions, Premier Floors, and Builders Choice require immediate executive attention.</div>
       </div>
-      <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #2563EB;border-radius:7px;padding:12px 14px;">
-        <div style="font-size:11px;font-weight:700;color:#1D4ED8;letter-spacing:0.5px;text-transform:uppercase;">Recommended Action</div>
+      <div style="background:#fff;border:1px solid #D6E4F5;border-left:3px solid #003E51;border-radius:7px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:700;color:#003E51;letter-spacing:0.5px;text-transform:uppercase;">Recommended Action</div>
         <div style="font-size:13.5px;line-height:1.55;color:#344054;margin-top:6px;">Assign owners, confirm recovery dates, and launch proactive outreach for the highest-risk accounts.</div>
       </div>
     </div>
@@ -57,7 +57,7 @@
         </sc-if>
       </div>
     </sc-for>
-    <button onClick="{{clearFilters}}" style="background:none;border:none;font-family:inherit;font-size:12px;font-weight:600;color:#2563EB;cursor:pointer;padding:6px 4px;">Clear filters</button>
+    <button onClick="{{clearFilters}}" style="background:none;border:none;font-family:inherit;font-size:12px;font-weight:600;color:#003E51;cursor:pointer;padding:6px 4px;">Clear filters</button>
     <span style="font-size:11.5px;color:#98A2B3;margin-left:auto;">{{resultSummary}}</span>
   </div>
 
@@ -113,8 +113,8 @@
               </sc-for>
             </div>
             <div style="display:flex;align-items:center;gap:12px;margin-top:7px;padding-left:30px;">
-              <a href="{{a.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;font-weight:600;color:#2563EB;text-decoration:none;">Open Salesforce ↗</a>
-              <button onClick="{{a.viewPlans}}" style="background:none;border:none;padding:0;font-family:inherit;font-size:11.5px;font-weight:600;color:#2563EB;cursor:pointer;">View call plans ›</button>
+              <a href="{{a.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;font-weight:600;color:#003E51;text-decoration:none;">Open Salesforce ↗</a>
+              <button onClick="{{a.viewPlans}}" style="background:none;border:none;padding:0;font-family:inherit;font-size:11.5px;font-weight:600;color:#003E51;cursor:pointer;">View call plans ›</button>
             </div>
           </div>
         </sc-for>
@@ -148,14 +148,14 @@
   <div style="position:fixed;top:0;right:0;height:100vh;width:460px;background:#fff;border-left:1px solid #E4E7EC;box-shadow:-8px 0 24px rgba(16,24,40,0.12);z-index:301;overflow-y:auto;">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:18px 20px;border-bottom:1px solid #EEF1F4;">
       <div>
-        <div style="font-size:10.5px;font-weight:700;color:#2563EB;letter-spacing:0.6px;text-transform:uppercase;">{{selected.eyebrow}}</div>
+        <div style="font-size:10.5px;font-weight:700;color:#003E51;letter-spacing:0.6px;text-transform:uppercase;">{{selected.eyebrow}}</div>
         <div style="font-size:17px;font-weight:700;color:#101828;margin-top:2px;">{{selected.title}}</div>
       </div>
       <button onClick="{{closeDrawer}}" style="background:none;border:none;cursor:pointer;color:#667085;font-size:18px;padding:0;line-height:1;">×</button>
     </div>
     <div style="padding:20px;">
-      <div style="background:#EFF6FF;border-radius:8px;padding:14px 16px;">
-        <div style="font-size:11px;font-weight:700;color:#1D4ED8;letter-spacing:0.5px;">AI-GENERATED SUMMARY</div>
+      <div style="background:#EDF5F7;border-radius:8px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:700;color:#003E51;letter-spacing:0.5px;">AI-GENERATED SUMMARY</div>
         <div style="font-size:13px;color:#344054;line-height:1.6;margin-top:7px;">{{selected.summary}}</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:14px;">
@@ -181,13 +181,13 @@
                 <div style="font-size:12.5px;font-weight:600;color:#101828;">{{acc.name}}</div>
                 <div style="font-size:10.5px;color:#98A2B3;margin-top:2px;">{{acc.region}} &middot; {{acc.product}}</div>
               </div>
-              <a href="{{acc.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11px;font-weight:600;color:#2563EB;text-decoration:none;">Salesforce ↗</a>
+              <a href="{{acc.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="font-size:11px;font-weight:600;color:#003E51;text-decoration:none;">Salesforce ↗</a>
             </div>
           </div>
         </sc-for>
       </sc-if>
       <sc-if value="{{selected.hasSalesforce}}" hint-placeholder-val="{{false}}">
-        <a href="{{selected.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-size:12px;font-weight:600;color:#fff;background:#2563EB;border-radius:6px;padding:8px 11px;text-decoration:none;margin-top:16px;">Open Salesforce Account ↗</a>
+        <a href="{{selected.salesforceUrl}}" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-size:12px;font-weight:600;color:#fff;background:#003E51;border-radius:6px;padding:8px 11px;text-decoration:none;margin-top:16px;">Open Salesforce Account ↗</a>
       </sc-if>
       <div style="font-size:12px;font-weight:700;color:#667085;text-transform:uppercase;letter-spacing:0.4px;margin-top:20px;">Supporting sales call plans</div>
       <sc-for list="{{selected.notes}}" as="note" hint-placeholder-count="3">
@@ -216,7 +216,7 @@ class Component extends DCLogic {
   }
   statusBadge(status) {
     const c = status === 'New'
-      ? { bg: '#EFF6FF', fg: '#1D4ED8' }
+      ? { bg: '#EFF6FF', fg: '#003E51' }
       : { bg: '#F2F4F7', fg: '#475467' };
     return `font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:999px;background:${c.bg};color:${c.fg};white-space:nowrap;`;
   }
@@ -387,7 +387,7 @@ class Component extends DCLogic {
       toggle: () => this.setState(s => ({ openFilter: s.openFilter === key ? null : key })),
       options: values.map(value => ({
         label: value,
-        style: `padding:7px 9px;border-radius:5px;cursor:pointer;font-size:12px;color:${this.state[key] === value ? '#1D4ED8' : '#344054'};background:${this.state[key] === value ? '#EFF6FF' : 'transparent'};font-weight:${this.state[key] === value ? '600' : '400'};`,
+        style: `padding:7px 9px;border-radius:5px;cursor:pointer;font-size:12px;color:${this.state[key] === value ? '#003E51' : '#344054'};background:${this.state[key] === value ? '#EFF6FF' : 'transparent'};font-weight:${this.state[key] === value ? '600' : '400'};`,
         select: () => this.setState({ [key]: value, openFilter: null }),
       })),
     }));
